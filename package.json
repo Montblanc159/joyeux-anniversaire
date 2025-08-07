@@ -1,0 +1,28 @@
+{
+  "name": "joyeux-anniversaire",
+  "version": "1.0.0",
+  "description": "Elsa's 32th bday",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon",
+    "build": "tsc",
+    "lint": "eslint . --fix",
+    "type": "tsc --noEmit"
+  },
+  "dependencies": {
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.6",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "sass": "^1.90.0"
+  }
+}
