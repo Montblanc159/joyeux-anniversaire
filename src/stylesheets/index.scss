@@ -1,3 +1,236 @@
+* {
+    box-sizing: border-box;
+}
+
+$black: black;
+$white: white;
+$main-color: #e09431;
+$main-color-dark: #291a06;
+$main-color-light: #e4b188;
+$secondary-color: #e69d15;
+$default-font: "VT323", monospace;
+
 body {
-    color: red;
+    color: $white;
+    background-color: $main-color-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: $default-font;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+video {
+    border-radius: 1px;
+}
+
+@keyframes loadingFade {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+$default-radius: 25px;
+
+.chat::before {
+    content: "";
+    display: block;
+    border-radius: $default-radius;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWP4//+/MQMDAwMDABkkAzHvXwTkAAAAAElFTkSuQmCC) repeat;
+}
+
+$width-ratio: 4;
+$height-ratio: 3;
+$width: 720px;
+
+.chat {
+    width: $width;
+    height: calc($height-ratio*$width/$width-ratio);
+    background-color: $main-color-dark;
+    position: relative;
+    border-radius: $default-radius;
+    border: $main-color 3px solid;
+    padding-bottom: 90px;
+
+    &__messages {
+        overflow: scroll;
+        padding: 25px 25px 0;
+        max-height: 100%;
+
+        * {
+            overflow-anchor: none;
+        }
+
+        &__anchor {
+            overflow-anchor: auto;
+            height: 1px;
+        }
+
+        &__me {
+            color: $secondary-color;
+        }
+
+        &__narrator {
+            color: $secondary-color;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        padding: 25px;
+        justify-content: space-around;
+        flex-direction: row;
+
+        border-top: $main-color 1px solid;
+        min-height: 90px;
+
+        button {
+            background-color: $main-color;
+            color: $white;
+            font-family: $default-font;
+            font-size: 1.4rem;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px 7px;
+
+            &:hover {
+                background-color: $main-color-dark;
+            }
+
+            &:active {
+                background-color: $main-color-light;
+            }
+        }
+    }
+
+    &__placeholder {
+        width: 5em;
+        height: 2em;
+        position: relative;
+        padding: 10px;
+        margin-left: 5px;
+        border-radius: 20px;
+
+        &__dot {
+            float: left;
+            width: 8px;
+            height: 8px;
+            margin: 0 4px;
+            background: $white;
+            opacity: 0;
+            animation: loadingFade 1s infinite;
+
+            &::nth-child(1) {
+                animation-delay: 0s;
+            }
+
+            &:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+        }
+    }
+}
+
+.password-game {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $main-color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+        max-width: 150px;
+        border-radius: 25px;
+        border: $main-color-light 5px solid;
+        margin: 10px;
+    }
+
+    &__form {
+        margin: 10px;
+
+        & * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        &__input {
+            background-color: $main-color;
+            color: $white;
+            padding: 7px;
+            border-radius: 3px 0 0 3px;
+            border: none;
+        }
+
+        &__button {
+            background-color: $main-color;
+            color: $white;
+            padding: 7px;
+            border-radius: 0 3px 3px 0;
+            border: none;
+            border-left: $main-color-dark 1px solid;
+
+            &:hover {
+                background-color: $main-color-dark;
+            }
+
+            &:active {
+                background-color: $main-color-light;
+            }
+        }
+
+    }
+
+    &__details {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.1rem;
+
+        &__summary {}
+
+        &__p {}
+    }
+}
+
+.encrypted-file-game {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $main-color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
