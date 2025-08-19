@@ -1,7 +1,7 @@
 import { type GameEvent } from "../games.js";
-import { audioReaction, pauseGameMusic, playGameMusic } from "../chat.js";
+import { audioReaction, playGameMusic } from "../audioSystem.js";
 
-const body = document.getElementsByTagName("body")[0];
+const main = document.getElementsByTagName("main")[0];
 const password = "Waco";
 const gameEvent: GameEvent = { nextMessageId: 150 };
 
@@ -30,7 +30,7 @@ function initGame(eventElement: DocumentFragment) {
     section.id = "game";
 
 
-    body.appendChild(fragment);
+    main.appendChild(fragment);
 
 
     setTimeout(() => {
@@ -61,7 +61,7 @@ function initGame(eventElement: DocumentFragment) {
         button.className = "password-game__form__button";
         button.textContent = "✓";
 
-        body.appendChild(fragment);
+        main.appendChild(fragment);
 
         button.addEventListener("click", () => {
             if (checkPassword(input.value)) {

@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 * {
     box-sizing: border-box;
 }
@@ -159,6 +161,68 @@ $width: 720px;
     }
 }
 
+.clues {
+    &:empty {
+        display: none;
+    }
+
+    position: fixed;
+    left: 0;
+    padding: 7px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    background-color: $main-color;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-right: $main-color-light 3px solid;
+    border-top: $main-color-light 3px solid;
+    border-bottom: $main-color-light 3px solid;
+
+    &__link {
+        margin: 7px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &__icon {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+
+    &__window {
+        display: none;
+
+        &__close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &--is-open {
+            display: block;
+            position: absolute;
+            top: -25px;
+            width: 350px;
+            background-color: $main-color;
+            border-radius: 12.5px;
+            padding: 25px;
+            border: $main-color-light 3px solid;
+        }
+    }
+}
+
 .password-game {
     position: fixed;
     top: 0;
@@ -215,22 +279,64 @@ $width: 720px;
     &__details {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 1.1rem;
-
-        &__summary {}
-
-        &__p {}
     }
 }
 
 .encrypted-file-game {
+    $file-color: #653b8d;
+    $file-color-dark: color.adjust($file-color, $lightness: -10%);
+    $file-color-darker: color.adjust($file-color, $lightness: -25%);
+
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: $main-color-dark;
+    background-color: $file-color-dark;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &__deencryptor {
+        background-color: $file-color-darker;
+        padding: 25px;
+        margin: 12.5px;
+        border: 3px $file-color solid;
+        border-radius: 25px;
+        max-width: 670px;
+
+        &__title {
+            padding: 0;
+            margin: 0;
+        }
+
+        &__clue {
+            font-size: 1rem;
+        }
+
+        &__input {
+            border: none;
+            padding: 7px;
+            border-radius: 3px;
+        }
+    }
+
+    &__file {
+        background-color: $file-color-darker;
+        padding: 25px;
+        border: 3px $file-color solid;
+        border-radius: 25px;
+        margin: 12.5px;
+        max-width: 670px;
+
+        &__description {
+            font-size: 1rem;
+            display: block;
+            // background-color: $file-color;
+            border-bottom: 1px $file-color solid;
+            width: 100%;
+
+        }
+    }
 }

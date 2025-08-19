@@ -1,12 +1,25 @@
 import { type GameEvent } from "../games.js";
-import { audioReaction, pauseGameMusic, playGameMusic } from "../chat.js";
+import { audioReaction, playGameMusic } from "../audioSystem.js";
 
-const body = document.getElementsByTagName("body")[0];
-const clearSentence = "ONZE NOVEMBRE DEUX MILLE DIX HUIT PROTOCOLE D ESSAI NUMERO SIX SUJET ELLIE. CAUSE DU DECES: ARRET DES FONCTIONS CEREBRALES"
-const key = "LETEMPLEDUPEUPLE";
-const encryptedSentence = vigenereNums(clearSentence, key, true);
+const clearSentences = [
+    "ONZE NOVEMBRE DEUX MILLE DIX HUIT",
+    "PROTOCOLE D ESSAI NUMERO SEIZE",
+    "SUJET: ELLIE",
+    "STATUT: ECHEC",
+    "CAUSE: DECES APRES ARRET DES FONCTIONS CEREBRALES",
+    "DESCRIPTION: DES L INJECTION DE SCOPOLAMINE ET DE FLUNITRAZEPAM,",
+    "LE SUJET SE MONTRE RECEPTIF ET SE SOUMET AUX ORDRES.",
+    "APRES UNE DEMI HEURE, LE SUJET PERD CONNAISSANCE.",
+    "INJECTION D ADRENALINE INFRUCTUEUSE.",
+    "LE SUJET DECEDE UNE HEURE APRES L INJECTION.",
+    "EFFETS PERSONNELS STOCKES EN LIEU SUR."
+]
+
+const key = "TEMPLEDUPEUPLE";
+const encryptedSentences = clearSentences.map((clearSentence) => vigenereNums(clearSentence, key, true));
 const gameEvent: GameEvent = { nextMessageId: 150 };
 const baseName = "encrypted-file-game"
+const main = document.getElementsByTagName("main")[0];
 
 export function encryptedFileGameLauncher(): DocumentFragment {
     const fragment = document.createDocumentFragment();
@@ -32,34 +45,64 @@ function initGame(eventElement: DocumentFragment) {
     section.className = baseName;
     section.id = "game";
 
-
-    body.appendChild(fragment);
-
+    main.appendChild(fragment);
 
     setTimeout(() => {
         loading.remove();
 
-        const file = section.appendChild(document.createElement("div"));
+
         const deencryptor = section.appendChild(document.createElement("div"));
-        const input = file.appendChild(document.createElement("input"));
-        const cypher = file.appendChild(document.createElement("p"))
+        const deencryptorTitle = deencryptor.appendChild(document.createElement("p"));
+        const clueText = deencryptor.appendChild(document.createElement("p"));
+        const input = deencryptor.appendChild(document.createElement("input"));
 
+        const file = section.appendChild(document.createElement("div"));
+        const fileDescription = file.appendChild(document.createElement("p"));
 
-        input.className = baseName + "__input";
+        deencryptorTitle.textContent = "Décrypteur 2000";
+        clueText.textContent = "Adepte de ce culte ou végétarien, en quête de soin, d'une même molécule ils ont besoin.";
+
+        deencryptor.className = baseName + "__deencryptor";
+        clueText.className = baseName + "__deencryptor__clue";
+        deencryptorTitle.className = baseName + "__deencryptor__title";
+
+        input.className = baseName + "__deencryptor__input";
         input.type = "text";
-        input.placeholder = "Clef";
+        input.placeholder = "Clef de chiffrement";
 
         file.className = baseName + "__file"
-        cypher.textContent = encryptedSentence;
+        fileDescription.className = baseName + "__file__description"
+        fileDescription.textContent = "/home/gaby/privé/201811082034-rapport.txt"
 
-        body.appendChild(fragment);
+        let cypher: Array<HTMLParagraphElement> = [];
+
+        encryptedSentences.forEach((encryptedSentence) => {
+            let p = file.appendChild(document.createElement("p"));
+            p.textContent = encryptedSentence;
+            cypher.push(p);
+        })
+
+        main.appendChild(fragment);
 
         input.addEventListener("input", () => {
-            cypher.textContent = vigenereNums(encryptedSentence, input.value, false);
+            cypher.forEach((p, index) => {
+                p.textContent = vigenereNums(encryptedSentences[index], input.value, false);
+            })
 
-            if (input.value === key) {
+            if (input.value.toUpperCase().replaceAll(" ", "") === key) {
                 audioReaction("success");
-                // eventElement.dispatchEvent(new CustomEvent("won", { detail: gameEvent }));
+                input.disabled = true;
+                input.className += "--success";
+
+                const validateBtn = document.createElement("button")
+                validateBtn.textContent = "✓"
+                validateBtn.className = baseName + "__deencryptor__validate";
+
+                validateBtn.addEventListener("click", () => {
+                    eventElement.dispatchEvent(new CustomEvent("won", { detail: gameEvent }));
+                });
+
+                input.after(validateBtn);
             }
         })
 
@@ -73,25 +116,13 @@ function vigenereNums(input: string, key: string, encrypt: boolean) {
     }
 
     input = input.toUpperCase();
-
-    key = key.toUpperCase();
-    // let key_correct = "";
-
-    // for (let i = 0; i < key.length; i++) {
-    //     let key_char = alphabet.indexOf(key.charAt(i));
-    //     if (key_char > -1) { key_correct += alphabet.charAt(key_char) };
-    // }
-
-    // key = key_correct;
-
+    key = key.toUpperCase().replaceAll(" ", "");
 
     let output = "";
     let key_index = 0;
-    let n = 0;
 
-    for (let i = 0; i < input.length; i++) {
-        let input_char = input.charAt(i);
-        let input_char_value = alphabet.indexOf(input_char);
+    input.split("").forEach((char) => {
+        let input_char_value = alphabet.indexOf(char);
 
         if (input_char_value > -1) { // ne (dé)chiffre que les 26 lettres majuscules
             if (encrypt) { // cryptage
@@ -104,18 +135,12 @@ function vigenereNums(input: string, key: string, encrypt: boolean) {
             input_char_value += 26;
             input_char_value %= 26;
 
-            // if ((n % 5 == 0) && (n > 0) && (encrypt)) {
-            //     output += " "
-            // };
-
-            n++;
-
             output += alphabet.charAt(input_char_value);
             key_index = (key_index + 1) % key.length;
         } else {
-            output += input_char;
+            output += char;
         }
-    }
+    })
 
     return output;
 }
@@ -123,7 +148,7 @@ function vigenereNums(input: string, key: string, encrypt: boolean) {
 function loadingText() {
     const p = document.createElement("p");
     p.textContent = "Ouverture du fichier...";
-    p.className = "password-game__loading";
+    p.className = baseName + "__loading";
 
     return p
 }

@@ -1,12 +1,11 @@
 import { dialogs, type Dialog, type Answer } from './dialogs.js';
-import { games, GameEvent } from "./games.js"
+import { games, GameEvent } from "./games.js";
+import { getCookie, setCookie } from "./cookies.js";
+import { audioReaction, playGameMusic } from './audioSystem.js';
 
 const chatBox = document.getElementsByClassName("chat__messages")[0];
 const anchor = document.getElementsByClassName("chat__messages__anchor")[0];
 const inputBox = document.getElementsByClassName("chat__input")[0];
-
-const bgAudio = new Audio();
-bgAudio.loop = true;
 
 const messageContructors: { [index: string]: (dialog: Dialog) => DocumentFragment } = {
     basic: createBasicMessage,
@@ -15,68 +14,6 @@ const messageContructors: { [index: string]: (dialog: Dialog) => DocumentFragmen
     game: createGameMessage,
     narrator: createNarratorMessage,
     image: createImageMessage,
-}
-
-const uiSoundFX: { [index: string]: string } = {
-    msgReceived: "static/msg-notif.mp3",
-    error: "static/error.mp3",
-    success: "static/success.mp3",
-    booting: "static/booting.mp3"
-}
-
-const bgMusics: { [index: string]: string } = {
-    main: "static/main-bg-music.mp3",
-    gameOne: "static/game-one-bg-music.mp3"
-}
-
-function setCookie(cname: string, cvalue: string, exdays: number) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    let expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname: string): string {
-    let name = cname + "=";
-    let ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-
-    return "";
-}
-
-export function audioReaction(eventName: string) {
-    const audio = new Audio(uiSoundFX[eventName]);
-    audio.play();
-}
-
-export function playGameMusic(src?: string) {
-    if (src) {
-        bgAudio.src = bgMusics[src];
-    }
-
-    bgAudio.play();
-}
-
-export function pauseGameMusic() {
-    bgAudio.pause()
-}
-
-function checkCookie(): void {
-    if (getCookie("dialogsPath") === "") {
-        setCookie("dialogsPath", JSON.stringify([]), 30);
-    }
-
-    if (getCookie("lastDialog") === "") {
-        setCookie("lastDialog", JSON.stringify(0), 30);
-    }
 }
 
 function updateDialogPathCookie(dialogId: number): void {
@@ -236,7 +173,11 @@ function nextMessage(id: number) {
 
     if (nextDialog) {
         let timeToWait =
-            Math.floor((Math.random() * 100)) + (nextDialog.content.length * 10)
+            Math.floor((Math.random() * 500)) + (nextDialog.content.length * 10)
+
+        if (nextDialog.type !== "basic" && nextDialog.type !== "game") {
+            timeToWait += Math.floor((Math.random() * 5000))
+        }
 
         addPlaceHolder();
 
@@ -248,6 +189,8 @@ function nextMessage(id: number) {
 
         setTimeout(() => {
             removePlaceHolder();
+
+            document.dispatchEvent(new Event("nextDialog"));
 
             const messageConstructor = messageContructors[nextDialog.type];
 
@@ -272,15 +215,13 @@ function createButton(answer: Answer) {
     button.id = answer.dialogId.toString();
 
     button.addEventListener("click", () => {
+        audioReaction("msgSent")
         chatBox.insertBefore(createUserMessage(answer), anchor);
         nextMessage(answer.dialogId);
     })
 
     return button;
 }
-
-checkCookie();
-playGameMusic("main");
 
 let lastDialogId = JSON.parse(getCookie("lastDialog"));
 

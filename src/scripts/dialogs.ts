@@ -28,7 +28,7 @@ export const dialogs: Array<Dialog> = [
     },
     {
         id: 10,
-        content: "Je suis soulagé que vous soyez là. J'ai très peu de temps et la situation est désespérée ici...",
+        content: "Bonjour. Je suis soulagé que vous soyez là. J'ai très peu de temps et la situation est désespérée ici...",
         type: "basic",
         answers: [
             {
@@ -43,7 +43,7 @@ export const dialogs: Array<Dialog> = [
         content: "Je suis Vernon Howell. Vous ne me connaissez pas.",
         answers: [
             {
-                content: "Pourquoi me contacter moi ?",
+                content: "Pourquoi me contacter ?",
                 dialogId: 30,
             }
         ],
@@ -125,7 +125,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 100,
         type: "basic",
-        content: "NON, SURTOUT PAS ! Cela précipiterait la mort de tout le monde. Il nous a prévenu, toute intrusion du monde extérieur dans notre Havre nous anéantira. Il refuse de nous voir souffrir la fin des temps et préfère que nous disparaissions sans peines.",
+        content: "NON, SURTOUT PAS ! Cela précipiterait la mort de tout le monde. Il nous a prévenu, toute intrusion du monde extérieur dans notre Havre nous anéantira. Il refuse de nous voir souffrir la fin des temps.",
         answers: [],
         dialogId: 105,
     },
@@ -186,17 +186,9 @@ export const dialogs: Array<Dialog> = [
     {
         id: 160,
         type: "basic",
-        content: "Je vois deux dossiers : Protocole et Privé. J'ouvre lequel ?",
-        answers: [
-            {
-                content: "'Protocole'",
-                dialogId: 170,
-            },
-            {
-                content: "'Privé'",
-                dialogId: 200,
-            }
-        ]
+        content: "Je vois deux dossiers : Protocole et Privé. Je commence par Privé.",
+        answers: [],
+        dialogId: 170,
     },
     {
         id: 170,
@@ -217,16 +209,23 @@ export const dialogs: Array<Dialog> = [
     {
         id: 190,
         type: "image",
-        content: "Un plan ?",
+        content: "Un plan.",
         turningPoint: true,
         media: "",
         answers: [],
-        dialogId: 160,
+        dialogId: 195,
+    },
+    {
+        id: 195,
+        type: "basic",
+        content: "J'ouvre le deuxième dossier, Protocole.",
+        answers: [],
+        dialogId: 200,
     },
     {
         id: 200,
         type: "basic",
-        content: "Un fichier crypté. C'est hors de mes compétences, à vous de jouer.",
+        content: "Un fichier crypté. Hors de mes compétences, à vous de jouer.",
         answers: [
             {
                 content: "Ok, c'est parti.",
@@ -241,4 +240,80 @@ export const dialogs: Array<Dialog> = [
         content: "",
         answers: [],
     },
+    {
+        id: 220,
+        type: "basic",
+        content: "Oh mon dieu... Ellie... Non, ce n'est pas possible...",
+        answers: [
+            {
+                content: "Vous la connaissiez ?",
+                dialogId: 230
+            }
+        ],
+    },
+    {
+        id: 230,
+        type: "basic",
+        content: "C'est... C'était une fervente fidèle de Gabriel... Elle devait réaliser son ascension.",
+        answers: [],
+        dialogId: 240
+    },
+    {
+        id: 240,
+        type: "basic",
+        content: "Il va payer ! Je vais le tuer !",
+        answers: [
+            {
+                content: "Non, sa place est en prison.",
+                dialogId: 250,
+            },
+            {
+                content: "C'est tout ce qu'il mérite.",
+                dialogId: 260,
+            }
+        ],
+    },
+    {
+        id: 250,
+        type: "basic",
+        content: "Oui, vous avez raison, vous êtes sage. Je dois me contenir...",
+        turningPoint: true,
+        answers: [
+            {
+                content: "Oui. Rassemblez vos esprits, il faut qu'on aille trouver ce \"lieu sûr\".",
+                dialogId: 270,
+            }
+        ]
+    },
+    {
+        id: 260,
+        type: "basic",
+        content: "...",
+        turningPoint: true,
+        answers: [
+            {
+                content: "Bon... Rassemblez vos esprits, il faut qu'on aille trouver ce \"lieu sûr\".",
+                dialogId: 270,
+            }
+        ]
+    },
+    {
+        id: 270,
+        type: "basic",
+        content: "Oui, il doit être caché dans le Havre. Peut-être qu'en jetant un oeil au plan que l'on a trouvé ?",
+        answers: [
+            {
+                content: "Allons voir dans la cuisine.",
+                dialogId: 300
+            },
+            {
+                content: "Allons voir dans la chapelle de méditation.",
+                dialogId: 310
+            },
+            {
+                content: "Allons voir dans la verrière.",
+                dialogId: 320
+            },
+        ]
+    }
 ]
