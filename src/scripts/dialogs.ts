@@ -376,7 +376,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 304,
         type: "basic",
-        content: "Avec la note peut-être que vous trouverez comment l'ouvrir ?",
+        content: "La note semble relier à cette serrure, à vous de jouer.",
         answers: [
             {
                 content: "Ok, c'est parti.",
@@ -388,32 +388,120 @@ export const dialogs: Array<Dialog> = [
         id: 305,
         type: "game",
         content: "",
-        media: "fridgeGame",
+        media: "kitchenGame",
         answers: [],
     },
     {
         id: 306,
         type: "basic",
-        content: "De la prednisone ? ",
+        content: "Ok le frigo est ouvert. Je regarde ce qu'il y a dedans.",
         answers: [],
+        dialogId: 307
+    },
+    {
+        id: 307,
+        type: "image",
+        turningPoint: true,
+        content: "De la prednisone, je connais ce médicament... Il a dû nous accoutumer lentement en empoisonnant nos repas... Un arrêt brutal et c'est le décés assuré.",
+        media: "https://placehold.co/350x350",
+        answers: [],
+        dialogId: 308
+    },
+    {
+        id: 308,
+        type: "image",
+        turningPoint: true,
+        content: "Une note est caché entre les boîtes de médicament. Encore plus cryptique que d'habitude.",
+        media: "https://placehold.co/350x350",
+        answers: [
+            {
+                content: "Ok, partons de là.",
+                dialogId: 280,
+            }
+        ],
+    },
+    {
+        id: 309,
+        type: "basic",
+        content: "Ok je suis sorti.",
+        answers: [],
+        dialogId: 280,
     },
     {
         id: 310,
         type: "narrator",
         content: "Dix minutes plus tard...",
         answers: [],
-        dialogId: 312
+        dialogId: 311
     },
     {
-        id: 312,
+        id: 311,
         type: "basic",
         content: "Je suis dans la chapelle. ",
         answers: [
+            {
+                content: "À quoi vous sert cette chapelle ?",
+                dialogId: 312
+            },
+            {
+                content: "Regardez autour de vous.",
+                dialogId: 313
+            },
             {
                 content: "Changer de lieu",
                 dialogId: 280
             }
         ]
+    },
+    {
+        id: 312,
+        type: "basic",
+        content: "C'est le plus beau lieu du Havre. Il est magnifique, couvert de dorures et de peintures à la gloire de notre Seigneur Gabriel. C'est ici qu'en sa présence nous pratiquons la méditation dynamique qui nous permettra devenir des êtres de lumières, pour finalement faire notre ascension.",
+        answers: [
+            {
+                content: "Regardez autour de vous.",
+                dialogId: 313
+            },
+            {
+                content: "Changer de lieu",
+                dialogId: 280
+            }
+        ]
+    },
+    {
+        id: 313,
+        type: "image",
+        content: "À droite il y a un piano, sur son pupitre, à la place d'une partition, un étrange mot.",
+        media: "https://placehold.co/350x350",
+        turningPoint: true,
+        answers: [
+            {
+                content: "Essayons d'y jouer pour voir.",
+                dialogId: 314
+            },
+        ]
+    },
+    {
+        id: 314,
+        type: "game",
+        content: "",
+        media: "pianoGame",
+        answers: [],
+    },
+    {
+        id: 315,
+        type: "basic",
+        content: "Bravo ! Vos talents de musiciennes n'ont d'égales que votre perspicacité. Un tiroir caché s'est ouvert dans le piano.",
+        answers: [],
+        dialogId: 316,
+    },
+    {
+        id: 316,
+        type: "image",
+        turningPoint: true,
+        media: "https://placehold.co/350x350",
+        content: "Dans ce tiroir il y a un crâne... et dans ce crâne... un papier à musique avec une écritures qui m'est inconnue.",
+        answers: [],
     },
     {
         id: 320,

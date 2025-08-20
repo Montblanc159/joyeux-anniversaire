@@ -106,6 +106,7 @@ $width: 720px;
         padding: 25px;
         justify-content: space-around;
         flex-direction: row;
+        column-gap: 12px;
 
         border-top: $main-color 1px solid;
         min-height: 90px;
@@ -379,6 +380,191 @@ $width: 720px;
             border-bottom: 1px $file-color solid;
             width: 100%;
 
+        }
+    }
+}
+
+.kitchen-game {
+    $lock-color: #71e3e7;
+    $lock-color-light: color.adjust($lock-color, $lightness: +20%);
+    $lock-color-dark: color.adjust($lock-color, $lightness: -10%);
+    $lock-color-darker: color.adjust($lock-color, $lightness: -25%);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $lock-color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__lock {
+        background-color: $lock-color-light;
+        padding: 50px;
+        border-radius: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        border: $lock-color-darker 3px solid;
+
+        &__input {
+            background-color: $white;
+            color: $lock-color-darker;
+            width: 50px;
+            height: 100px;
+            margin: 12px;
+            border-radius: 12px;
+            border: $lock-color-darker 3px solid;
+            font-size: 4rem;
+            text-align: center;
+
+            &:focus {
+                // outline: 1px $lock-color-darker solid;
+                outline: none;
+
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+
+        &__validate {
+            color: $white;
+            width: 100%;
+            border: $lock-color-darker 3px solid;
+            border-radius: 7px;
+            background-color: $lock-color-darker;
+            padding: 7px 12px;
+            font-weight: bolder;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $lock-color-dark;
+            }
+
+            &:active {
+                background-color: $lock-color-light;
+            }
+
+            &:disabled {
+                cursor: default;
+                border: $lock-color-dark 3px solid;
+                background-color: $lock-color-light;
+                color: $lock-color-dark;
+            }
+        }
+    }
+
+    &__quit {
+        margin-top: 25px;
+        background-color: $lock-color-darker;
+        color: $white;
+        border: $lock-color-darker 3px solid;
+        border-radius: 7px;
+        background-color: $lock-color-darker;
+        padding: 7px 12px;
+        font-weight: bolder;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $lock-color-dark;
+        }
+
+        &:active {
+            background-color: $lock-color-light;
+        }
+
+        &:disabled {
+            cursor: default;
+            border: $lock-color-dark 3px solid;
+            background-color: $lock-color-light;
+            color: $lock-color-dark;
+        }
+    }
+}
+
+.piano-game {
+    $piano-color: #815938;
+    $piano-color-light: color.adjust($piano-color, $lightness: +20%);
+    $piano-color-dark: color.adjust($piano-color, $lightness: -10%);
+    $piano-color-darker: color.adjust($piano-color, $lightness: -25%);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $piano-color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__piano {
+        display: flex;
+        flex-direction: row;
+        margin: 25px;
+
+        &__key {
+            &:first-child {
+                border-left: $piano-color-darker 2px solid;
+                border-bottom-left-radius: 5px;
+                border-top-left-radius: 5px;
+            }
+
+            &:last-child {
+                border-right: $piano-color-darker 2px solid;
+                border-bottom-right-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            height: 125px;
+            width: 35px;
+            background-color: $white;
+            border: $piano-color-darker 1px solid;
+            border-top: $piano-color-darker 2px solid;
+            border-bottom: $piano-color-darker 2px solid;
+            z-index: 49;
+
+            &__black {
+                height: 75px;
+                width: 16px;
+                margin-left: -8px;
+                margin-right: -8px;
+                background-color: $piano-color-darker;
+                z-index: 50;
+            }
+        }
+    }
+
+    &__quit {
+        margin-top: 25px;
+        background-color: $piano-color-darker;
+        color: $white;
+        border: $piano-color-darker 3px solid;
+        border-radius: 7px;
+        background-color: $piano-color-darker;
+        padding: 7px 12px;
+        font-weight: bolder;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $piano-color-dark;
+        }
+
+        &:active {
+            background-color: $piano-color-light;
+        }
+
+        &:disabled {
+            cursor: default;
+            border: $piano-color-dark 3px solid;
+            background-color: $piano-color-light;
+            color: $piano-color-dark;
         }
     }
 }

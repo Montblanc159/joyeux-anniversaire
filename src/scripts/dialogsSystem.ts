@@ -131,6 +131,15 @@ function createGameMessage(dialog: Dialog): DocumentFragment {
                 }
             })
 
+            gameElement.addEventListener("quit", (event: CustomEventInit<GameEvent>) => {
+                document.getElementById("game")?.remove();
+                playGameMusic("main");
+
+                if (event.detail) {
+                    nextMessage(event.detail.nextMessageId)
+                }
+            })
+
             return gameElement;
         } else {
             return document.createDocumentFragment();

@@ -9,11 +9,51 @@ export type Clue = {
 
 export const clues: Array<Clue> = [
     {
-        title: "Papier à musique",
-        dialogId: 999,
+        title: "Fichier : plan-havre.jpg",
+        type: "image",
+        content: [],
+        media: "https://placehold.co/350x350",
+        dialogId: 190
+    },
+    {
+        title: "Fichier : cultissime.txt",
+        dialogId: 180,
         type: "text",
         content: [
-            "UT QUEANT LAXIS",
+            "AVEC UNE CLEF, LA CRYPTE S'OUVRE",
+            "Adepte de ce culte ou végétarien, en quête de soin, d'une même molécule ils ont besoin."
+        ]
+    },
+    {
+        title: "Note : Tripoli",
+        dialogId: 303,
+        type: "text",
+        content: [
+            "Trouve la vrai dénomination de cet affabulateur qui voulut dupliquer un humain",
+            "Puis le surnom final de ce gourou qui ne jurait que par \"Zorba le bouddha\"",
+            "Enfin, lie les prénoms de ces deux fondateurs qui voyaient le messie dans une soucoupe",
+            "À chacun, calcul leur nombre intime."
+        ]
+    },
+    {
+        title: "Note : M**** !",
+        dialogId: 313,
+        type: "text",
+        content: [
+            "Est-il aussi clair dans un miroir ?"
+        ]
+    },
+    {
+        title: "Note : Correspondance",
+        dialogId: 308,
+        type: "text",
+        content: []
+    },
+    {
+        title: "Papier à musique : Ut queant laxis",
+        dialogId: 316,
+        type: "text",
+        content: [
             "Sapin => स",
             "Refus => र",
             "Gare => ग",
@@ -23,20 +63,4 @@ export const clues: Array<Clue> = [
             "Nier => नि"
         ]
     },
-    {
-        title: "Fichier n°1 - énigme",
-        dialogId: 180,
-        type: "text",
-        content: [
-            "AVEC UNE CLEF, LA CRYPTE S'OUVRE",
-            "Adepte de ce culte ou végétarien, en quête de soin, d'une même molécule ils ont besoin."
-        ]
-    },
-    {
-        title: "Fichier n°2 - plan",
-        type: "image",
-        content: [],
-        media: "https://placehold.co/350x350",
-        dialogId: 190
-    }
 ]
