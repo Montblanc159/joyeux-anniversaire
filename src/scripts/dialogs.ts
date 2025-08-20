@@ -113,7 +113,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 80,
         type: "video",
-        media: "static/bigbuck.mp4",
+        media: "static/videos/bigbuck.mp4",
         content: "Me croyez-vous maintenant ?",
         answers: [
             {
@@ -201,7 +201,7 @@ export const dialogs: Array<Dialog> = [
         id: 180,
         type: "image",
         content: "Serait-ce une énigme ?",
-        media: "",
+        media: "https://placehold.co/350x350",
         turningPoint: true,
         answers: [],
         dialogId: 190,
@@ -211,7 +211,7 @@ export const dialogs: Array<Dialog> = [
         type: "image",
         content: "Un plan.",
         turningPoint: true,
-        media: "",
+        media: "https://placehold.co/350x350",
         answers: [],
         dialogId: 195,
     },
@@ -276,11 +276,11 @@ export const dialogs: Array<Dialog> = [
     {
         id: 250,
         type: "basic",
-        content: "Oui, vous avez raison, vous êtes sage. Je dois me contenir...",
+        content: "Et pourtant l'envie est tellement forte. Je vais essayer de me contenir...",
         turningPoint: true,
         answers: [
             {
-                content: "Oui. Rassemblez vos esprits, il faut qu'on aille trouver ce \"lieu sûr\".",
+                content: "Oui. Rassemblez vos esprits, allons trouver ce \"lieu sûr\".",
                 dialogId: 270,
             }
         ]
@@ -292,7 +292,7 @@ export const dialogs: Array<Dialog> = [
         turningPoint: true,
         answers: [
             {
-                content: "Bon... Rassemblez vos esprits, il faut qu'on aille trouver ce \"lieu sûr\".",
+                content: "Bon... Rassemblez vos esprits, allons trouver ce \"lieu sûr\".",
                 dialogId: 270,
             }
         ]
@@ -300,20 +300,137 @@ export const dialogs: Array<Dialog> = [
     {
         id: 270,
         type: "basic",
-        content: "Oui, il doit être caché dans le Havre. Peut-être qu'en jetant un oeil au plan que l'on a trouvé ?",
+        content: "Il doit être caché dans le Havre. Peut-être qu'en jetant un oeil au plan que l'on a trouvé...",
+        answers: [],
+        dialogId: 280,
+    },
+    {
+        id: 280,
+        type: "basic",
+        content: "Où est-ce que je vais ?",
         answers: [
             {
-                content: "Allons voir dans la cuisine.",
+                content: "Dans la cuisine.",
                 dialogId: 300
             },
             {
-                content: "Allons voir dans la chapelle de méditation.",
+                content: "Dans la chapelle de méditation.",
                 dialogId: 310
             },
             {
-                content: "Allons voir dans la verrière.",
+                content: "Dans la verrière.",
                 dialogId: 320
             },
+        ]
+    },
+    {
+        id: 300,
+        type: "narrator",
+        content: "Dix minutes plus tard...",
+        answers: [],
+        dialogId: 301
+    },
+    {
+        id: 301,
+        type: "basic",
+        content: "Je suis dans la cuisine. Il ne faut pas que je reste trop longtemps. Seul les plus fervents y sont autorisés depuis plus d'un mois.",
+        answers: [
+            {
+                content: "Il y a une raison à ça ?",
+                dialogId: 302,
+            },
+            {
+                content: "Très bien, dépêchons-nous, que voyez-vous ?",
+                dialogId: 303,
+            },
+            {
+                content: "Changer de lieu",
+                dialogId: 280
+            }
+        ]
+    },
+    {
+        id: 302,
+        type: "basic",
+        content: "La nourriture doit rester pure, seul les êtres dont l'aura est lumineuse peuvent la manipuler.",
+        answers: [
+            {
+                content: "Très bien, dépêchons-nous, que voyez-vous ?",
+                dialogId: 303,
+            },
+            {
+                content: "Changer de lieu",
+                dialogId: 280
+            }
+        ]
+    },
+    {
+        id: 303,
+        type: "image",
+        content: "J'y ai trouvé un petit frigo avec une étrange serrure. Il y a une note sur le frigo.",
+        turningPoint: true,
+        media: "https://placehold.co/350x350",
+        answers: [],
+        dialogId: 304,
+    },
+    {
+        id: 304,
+        type: "basic",
+        content: "Avec la note peut-être que vous trouverez comment l'ouvrir ?",
+        answers: [
+            {
+                content: "Ok, c'est parti.",
+                dialogId: 305,
+            }
+        ]
+    },
+    {
+        id: 305,
+        type: "game",
+        content: "",
+        media: "fridgeGame",
+        answers: [],
+    },
+    {
+        id: 306,
+        type: "basic",
+        content: "De la prednisone ? ",
+        answers: [],
+    },
+    {
+        id: 310,
+        type: "narrator",
+        content: "Dix minutes plus tard...",
+        answers: [],
+        dialogId: 312
+    },
+    {
+        id: 312,
+        type: "basic",
+        content: "Je suis dans la chapelle. ",
+        answers: [
+            {
+                content: "Changer de lieu",
+                dialogId: 280
+            }
+        ]
+    },
+    {
+        id: 320,
+        type: "narrator",
+        content: "Dix minutes plus tard...",
+        answers: [],
+        dialogId: 322
+    },
+    {
+        id: 322,
+        type: "basic",
+        content: "Je suis dans la verrière. ",
+        answers: [
+            {
+                content: "Changer de lieu",
+                dialogId: 280
+            }
         ]
     }
 ]

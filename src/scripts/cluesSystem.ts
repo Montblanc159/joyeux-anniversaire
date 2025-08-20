@@ -30,7 +30,7 @@ export function addClues() {
                 let icon = link.appendChild(document.createElement("img"));
 
 
-                icon.src = clue?.icon || "static/default-clue-icon.webp";
+                icon.src = clue?.icon || "static/images/default-clue-icon.webp";
                 icon.className = baseName + "__link__icon";
 
                 link.className = baseName + "__link";
@@ -93,11 +93,15 @@ function createTextClue(clue: Clue): DocumentFragment {
 function createAudioClue(clue: Clue): DocumentFragment {
     const fragment = createTextClue(clue);
 
-    let media = fragment.appendChild(document.createElement("audio"));
+    const window = fragment.getElementById("clue_" + clue.dialogId);
 
-    media.src = clue?.media || "";
-    media.controls = true;
-    media.className = baseName + "__window__audio";
+    if (window) {
+        let media = window.appendChild(document.createElement("audio"));
+
+        media.src = clue?.media || "";
+        media.controls = true;
+        media.className = baseName + "__window__audio";
+    }
 
     return fragment;
 }
@@ -105,11 +109,15 @@ function createAudioClue(clue: Clue): DocumentFragment {
 function createVideoClue(clue: Clue): DocumentFragment {
     const fragment = createTextClue(clue);
 
-    let media = fragment.appendChild(document.createElement("video"));
+    const window = fragment.getElementById("clue_" + clue.dialogId);
 
-    media.src = clue?.media || "";
-    media.controls = true;
-    media.className = baseName + "__window__video";
+    if (window) {
+        let media = window.appendChild(document.createElement("video"));
+
+        media.src = clue?.media || "";
+        media.controls = true;
+        media.className = baseName + "__window__video";
+    }
 
     return fragment;
 }
@@ -117,10 +125,14 @@ function createVideoClue(clue: Clue): DocumentFragment {
 function createImageClue(clue: Clue): DocumentFragment {
     const fragment = createTextClue(clue);
 
-    let media = fragment.appendChild(document.createElement("img"));
+    const window = fragment.getElementById("clue_" + clue.dialogId);
 
-    media.src = clue?.media || "";
-    media.className = baseName + "__window__image";
+    if (window) {
+        let media = window.appendChild(document.createElement("img"));
+
+        media.src = clue?.media || "";
+        media.className = baseName + "__window__image";
+    }
 
     return fragment;
 }

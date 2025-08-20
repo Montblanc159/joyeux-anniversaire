@@ -1,16 +1,16 @@
 const uiSoundFX: { [index: string]: string } = {
-    msgReceived: "static/msg-notif.mp3",
-    msgSent: "static/sent-notif.mp3",
-    error: "static/error.mp3",
-    success: "static/success.mp3",
-    open: "static/open.mp3",
-    close: "static/close.mp3",
-    booting: "static/booting.mp3"
+    msgReceived: "static/audios/msg-notif.mp3",
+    msgSent: "static/audios/sent-notif.mp3",
+    error: "static/audios/error.mp3",
+    success: "static/audios/success.mp3",
+    open: "static/audios/open.mp3",
+    close: "static/audios/close.mp3",
+    booting: "static/audios/booting.mp3"
 }
 
 const bgMusics: { [index: string]: string } = {
-    main: "static/main-bg-music.mp3",
-    gameOne: "static/game-one-bg-music.mp3"
+    main: "static/audios/main-bg-music.mp3",
+    gameOne: "static/audios/game-one-bg-music.mp3"
 }
 
 export function audioReaction(eventName: string) {

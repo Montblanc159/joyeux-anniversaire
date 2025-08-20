@@ -17,7 +17,7 @@ const clearSentences = [
 
 const key = "TEMPLEDUPEUPLE";
 const encryptedSentences = clearSentences.map((clearSentence) => vigenereNums(clearSentence, key, true));
-const gameEvent: GameEvent = { nextMessageId: 150 };
+const gameEvent: GameEvent = { nextMessageId: 220 };
 const baseName = "encrypted-file-game"
 const main = document.getElementsByTagName("main")[0];
 
@@ -53,22 +53,22 @@ function initGame(eventElement: DocumentFragment) {
 
         const deencryptor = section.appendChild(document.createElement("div"));
         const deencryptorTitle = deencryptor.appendChild(document.createElement("p"));
-        const clueText = deencryptor.appendChild(document.createElement("p"));
+        // const clueText = deencryptor.appendChild(document.createElement("p"));
         const input = deencryptor.appendChild(document.createElement("input"));
 
         const file = section.appendChild(document.createElement("div"));
         const fileDescription = file.appendChild(document.createElement("p"));
 
         deencryptorTitle.textContent = "Décrypteur 2000";
-        clueText.textContent = "Adepte de ce culte ou végétarien, en quête de soin, d'une même molécule ils ont besoin.";
+        // clueText.textContent = "Adepte de ce culte ou végétarien, en quête de soin, d'une même molécule ils ont besoin.";
 
         deencryptor.className = baseName + "__deencryptor";
-        clueText.className = baseName + "__deencryptor__clue";
+        // clueText.className = baseName + "__deencryptor__clue";
         deencryptorTitle.className = baseName + "__deencryptor__title";
 
         input.className = baseName + "__deencryptor__input";
         input.type = "text";
-        input.placeholder = "Clef de chiffrement";
+        input.placeholder = "Clef de cryptage";
 
         file.className = baseName + "__file"
         fileDescription.className = baseName + "__file__description"
