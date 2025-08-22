@@ -44,7 +44,7 @@ export const clues: Array<Clue> = [
         ]
     },
     {
-        title: "Note : Correspondance",
+        title: "Note : Sésame",
         dialogId: 308,
         type: "text",
         content: []
@@ -54,9 +54,9 @@ export const clues: Array<Clue> = [
         dialogId: 316,
         type: "text",
         content: [
-            "Sapin => स",
-            "Refus => र",
-            "Gare => ग",
+            "Sapin => सा",
+            "Récrie => र",
+            "Gare => गा",
             "Matin => म",
             "Pale => प",
             "Data => ध",

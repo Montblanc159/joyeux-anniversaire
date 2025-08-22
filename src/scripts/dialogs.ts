@@ -456,7 +456,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 312,
         type: "basic",
-        content: "C'est le plus beau lieu du Havre. Il est magnifique, couvert de dorures et de peintures à la gloire de notre Seigneur Gabriel. C'est ici qu'en sa présence nous pratiquons la méditation dynamique qui nous permettra devenir des êtres de lumières, pour finalement faire notre ascension.",
+        content: "C'est le plus beau lieu du Havre. Il est magnifique, couvert de dorures et de peintures à la gloire de notre Seigneur Gabriel. C'est ici qu'en sa présence nous pratiquons la méditation dynamique qui nous permettra de devenir des êtres de lumières, pour finalement faire notre ascension.",
         answers: [
             {
                 content: "Regardez autour de vous.",
@@ -471,12 +471,12 @@ export const dialogs: Array<Dialog> = [
     {
         id: 313,
         type: "image",
-        content: "À droite il y a un piano, sur son pupitre, à la place d'une partition, un étrange mot.",
+        content: "À droite il y a un piano, sur son pupitre, à la place d'une partition, un étrange mot. Qu'en pensez-vous ?",
         media: "https://placehold.co/350x350",
         turningPoint: true,
         answers: [
             {
-                content: "Essayons d'y jouer pour voir.",
+                content: "Penchons nous sur ce piano.",
                 dialogId: 314
             },
         ]
@@ -500,8 +500,13 @@ export const dialogs: Array<Dialog> = [
         type: "image",
         turningPoint: true,
         media: "https://placehold.co/350x350",
-        content: "Dans ce tiroir il y a un crâne... et dans ce crâne... un papier à musique avec une écritures qui m'est inconnue.",
-        answers: [],
+        content: "Il y a un crâne dans le tiroir... et dans ce crâne... un papier à musique avec une écritures qui m'est inconnue.",
+        answers: [
+            {
+                content: "Ok, allons voir ailleurs.",
+                dialogId: 280,
+            }
+        ],
     },
     {
         id: 320,
@@ -513,12 +518,63 @@ export const dialogs: Array<Dialog> = [
     {
         id: 322,
         type: "basic",
-        content: "Je suis dans la verrière. ",
+        content: "Je suis dans la verrière.",
         answers: [
+            {
+                content: "À quoi vous sert cette verrière ?",
+                dialogId: 323,
+            },
+            {
+                content: "Voyez-vous quelque-chose ?",
+                dialogId: 324,
+            },
             {
                 content: "Changer de lieu",
                 dialogId: 280
             }
         ]
+    },
+    {
+        id: 323,
+        type: "basic",
+        content: "C'est notre lieu de ressourcement. Elle est énorme, toute de verre et d'acier. On y trouve de magnifiques plantes équatoriales: des orchidées, des sensitives ou de la datura. De sublimes oiseaux aussi. Et surtout, l'air y est pur.",
+        answers: [
+            {
+                content: "Voyez-vous quelque-chose ?",
+                dialogId: 324,
+            },
+            {
+                content: "Changer de lieu",
+                dialogId: 280
+            }
+        ]
+    },
+    {
+        id: 324,
+        type: "basic",
+        content: "Oui, je ne suis pas sûr de ce que j'avance mais il y a une imposante roche, et sur une des faces, il y a d'étranges signes gravés. Peut-être y jeterez-vous un oeil ?",
+        answers: [
+            {
+                content: "Allons-y",
+                dialogId: 325,
+            },
+            {
+                content: "Changer de lieu",
+                dialogId: 280
+            }
+        ]
+    },
+    {
+        id: 325,
+        type: "game",
+        media: "sesameGame",
+        content: "",
+        answers: []
+    },
+    {
+        id: 326,
+        type: "basic",
+        content: "Le caillou bouge ! Il fait un tel boucan, j'ai peur qu'il n'ait alerté du monde !",
+        answers: []
     }
 ]

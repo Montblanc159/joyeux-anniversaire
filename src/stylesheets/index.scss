@@ -488,7 +488,7 @@ $width: 720px;
 }
 
 .piano-game {
-    $piano-color: #815938;
+    $piano-color: #d3a54e;
     $piano-color-light: color.adjust($piano-color, $lightness: +20%);
     $piano-color-dark: color.adjust($piano-color, $lightness: -10%);
     $piano-color-darker: color.adjust($piano-color, $lightness: -25%);
@@ -530,6 +530,14 @@ $width: 720px;
             border-bottom: $piano-color-darker 2px solid;
             z-index: 49;
 
+            &:hover {
+                background-color: $piano-color-light;
+            }
+
+            &:active {
+                background-color: $piano-color-dark;
+            }
+
             &__black {
                 height: 75px;
                 width: 16px;
@@ -537,6 +545,14 @@ $width: 720px;
                 margin-right: -8px;
                 background-color: $piano-color-darker;
                 z-index: 50;
+
+                &:hover {
+                    background-color: $piano-color-dark;
+                }
+
+                &:active {
+                    background-color: $piano-color;
+                }
             }
         }
     }
@@ -565,6 +581,107 @@ $width: 720px;
             border: $piano-color-dark 3px solid;
             background-color: $piano-color-light;
             color: $piano-color-dark;
+        }
+    }
+}
+
+.sesame-game {
+    $sesame-color: #646464;
+    $sesame-color-light: color.adjust($sesame-color, $lightness: +20%);
+    $sesame-color-dark: color.adjust($sesame-color, $lightness: -10%);
+    $sesame-color-darker: color.adjust($sesame-color, $lightness: -25%);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $sesame-color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__rock {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        justify-content: center;
+        align-items: center;
+
+        &__hint {
+            font-variant-ligatures: none;
+        }
+
+        &__voice {
+
+            &__input,
+            &__button {
+                max-width: 200px;
+                height: 40px;
+            }
+
+            &__input {
+                border-top-left-radius: 7px;
+                border-bottom-left-radius: 7px;
+                border: $white;
+                padding-left: 12px;
+            }
+
+            &__button {
+                background-color: $sesame-color-darker;
+                color: $white;
+                border: $sesame-color-darker 3px solid;
+                border-top-right-radius: 7px;
+                border-bottom-right-radius: 7px;
+                background-color: $sesame-color-darker;
+                padding: 7px 12px;
+                font-weight: bolder;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $sesame-color-dark;
+                }
+
+                &:active {
+                    background-color: $sesame-color-light;
+                }
+
+                &:disabled {
+                    cursor: default;
+                    border: $sesame-color-dark 3px solid;
+                    background-color: $sesame-color-light;
+                    color: $sesame-color-dark;
+                }
+            }
+        }
+
+    }
+
+    &__quit {
+        margin-top: 25px;
+        background-color: $sesame-color-darker;
+        color: $white;
+        border: $sesame-color-darker 3px solid;
+        border-radius: 7px;
+        background-color: $sesame-color-darker;
+        padding: 7px 12px;
+        font-weight: bolder;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $sesame-color-dark;
+        }
+
+        &:active {
+            background-color: $sesame-color-light;
+        }
+
+        &:disabled {
+            cursor: default;
+            border: $sesame-color-dark 3px solid;
+            background-color: $sesame-color-light;
+            color: $sesame-color-dark;
         }
     }
 }
