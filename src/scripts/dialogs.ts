@@ -153,7 +153,7 @@ export const dialogs: Array<Dialog> = [
         content: "Vous sentez qu'argumenter contre son mysticisme ne vous ménera nulle part",
         answers: [
             {
-                content: "Trouvons les plans du gourou",
+                content: "Trouvons les plans de Gabriel",
                 dialogId: 130,
             }
         ],
@@ -574,7 +574,63 @@ export const dialogs: Array<Dialog> = [
     {
         id: 326,
         type: "basic",
-        content: "Le caillou bouge ! Il fait un tel boucan, j'ai peur qu'il n'ait alerté du monde !",
+        content: "Le caillou bouge, il fait un tel boucan, j'ai peur qu'il n'alerte du monde... Il cachait un escalier ! Vite, je descends.",
+        answers: [
+            {
+                content: "Ok, faites attention.",
+                dialogId: 327
+            }
+        ]
+    },
+    {
+        id: 327,
+        type: "narrator",
+        content: "5 minutes plus tard, Vernon est étrangement silencieux.",
+        answers: [
+            {
+                dialogId: 328,
+                content: "Tout va bien ?"
+            }
+        ]
+    },
+    {
+        id: 328,
+        type: "narrator",
+        content: "5 minutes de plus s'écoulent, Vernon ne répond toujours pas.",
+        answers: [
+            {
+                dialogId: 329,
+                content: "Vernon ?"
+            }
+        ]
+    },
+    {
+        id: 329,
+        type: "basic",
+        content: "La connexion est en train de s'interrompre, j'espère que ce message va quand même passer... il va falloir que vous inspectiez la page web pour trouver le mot de passe de reconnexion.",
+        answers: [
+            {
+                dialogId: 330,
+                content: "[La connexion se coupe]"
+            }
+        ]
+    },
+    {
+        id: 330,
+        content: "",
+        type: "game",
+        media: "reconnectGame",
         answers: []
+    },
+    {
+        id: 340,
+        content: "",
+        type: "basic",
+        answers: [
+            {
+                content: "",
+                dialogId: 350
+            }
+        ]
     }
 ]

@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+$pixel-background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWP4//+/MQMDAwMDABkkAzHvXwTkAAAAAElFTkSuQmCC) repeat;
+
 $black: black;
 $white: white;
 $main-color: #e09431;
@@ -58,7 +60,7 @@ $default-radius: 25px;
     height: 100%;
     width: 100%;
     pointer-events: none;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWP4//+/MQMDAwMDABkkAzHvXwTkAAAAAElFTkSuQmCC) repeat;
+    background: $pixel-background;
 }
 
 $width-ratio: 4;
@@ -683,5 +685,55 @@ $width: 720px;
             background-color: $sesame-color-light;
             color: $sesame-color-dark;
         }
+    }
+}
+
+.reconnect-game {
+    $reco-color: #3ce453;
+    $reco-color-light: color.adjust($reco-color, $lightness: +20%);
+    $reco-color-dark: color.adjust($reco-color, $lightness: -10%);
+    $reco-color-darker: color.adjust($reco-color, $lightness: -25%);
+    $reco-color-darkest: color.adjust($reco-color, $lightness: -75%);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $reco-color-darkest;
+    color: $reco-color;
+    overflow: auto;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+        background: $pixel-background;
+    }
+
+    &__text {
+        margin: 5px 0;
+
+        &__input {
+            display: inline;
+            background: none;
+            border: none;
+            color: inherit;
+            font-family: inherit;
+            font-size: inherit;
+            margin: 0;
+            padding: 0;
+            caret-shape: block !important;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
     }
 }

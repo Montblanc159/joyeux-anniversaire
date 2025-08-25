@@ -1,7 +1,7 @@
 import { type GameEvent } from "../games.js";
 import { audioReaction, playGameMusic } from "../audioSystem.js";
 
-const winGameEvent: GameEvent = { nextMessageId: 306 };
+const winGameEvent: GameEvent = { nextMessageId: 326 };
 const quitGameEvent: GameEvent = { nextMessageId: 309 };
 
 const baseName = "sesame-game"
@@ -74,7 +74,7 @@ function initGame(eventElement: DocumentFragment) {
             utter.addEventListener("end", () => {
                 if (input.value.toUpperCase() === key) {
                     audioReaction("success")
-                    // eventElement.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
+                    eventElement.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
                 } else {
                     audioReaction("error")
                 }
