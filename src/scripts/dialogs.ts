@@ -113,7 +113,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 80,
         type: "video",
-        media: "static/videos/bigbuck.mp4",
+        media: "static/videos/guru.mp4",
         content: "Me croyez-vous maintenant ?",
         answers: [
             {
@@ -254,7 +254,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 230,
         type: "basic",
-        content: "C'est... C'était une fervente fidèle de Gabriel... Elle devait réaliser son ascension.",
+        content: "C'est... C'était une fervente fidèle de Gabriel... Et une personne qui m'était très chère... Elle devait réaliser son ascension.",
         answers: [],
         dialogId: 240
     },
@@ -624,13 +624,276 @@ export const dialogs: Array<Dialog> = [
     },
     {
         id: 340,
-        content: "",
+        content: "C'est bon, la connexion est rétablie, ça devrait tenir. Le réseau n'est pas bon en souterrain.",
         type: "basic",
         answers: [
             {
-                content: "",
+                content: "Où est-ce que vous vous trouvez maintenant ?",
                 dialogId: 350
             }
         ]
+    },
+    {
+        id: 350,
+        content: "L'entrée s'est refermée derrière moi. J'ai descendu les escaliers, et maintenant je suis dans une pièce qui ressemble à une luxueuse suite d'hôtel. Les murs sont tapissés d'images obscènes, et de photos de Gabriel.",
+        type: "basic",
+        dialogId: 360,
+        answers: []
+    },
+    {
+        id: 360,
+        content: "Il y a un bureau qui trône au milieu de la pièce. Dans le fond, il y a une lourde porte blindée. à ma droite une porte en bois d'où semble s'échapper un courant d'air.",
+        type: "basic",
+        dialogId: 370,
+        answers: []
+    },
+    {
+        id: 370,
+        content: "Où est-ce que je vais ?",
+        type: "basic",
+        answers: [
+            {
+                content: "La porte en bois",
+                dialogId: 380,
+            },
+            {
+                content: "La porte blindée",
+                dialogId: 390,
+            },
+            {
+                content: "Le bureau",
+                dialogId: 400,
+            }
+        ]
+    },
+    {
+        id: 371,
+        content: "Où est-ce que je vais ?",
+        type: "basic",
+        answers: [
+            {
+                content: "La porte en bois",
+                dialogId: 381,
+            },
+            {
+                content: "Le bureau",
+                dialogId: 400,
+            }
+        ]
+    },
+    {
+        id: 380,
+        content: "Je sens de l'air frais et humide passer par les interstices de la porte. C'est peut-être une sortie. Mais elle est verrouillée.",
+        type: "basic",
+        turningPoint: true,
+        answers: [],
+        dialogId: 370,
+    },
+    {
+        id: 381,
+        content: "Je sens de l'air frais et humide passer par les interstices de la porte. C'est peut-être une sortie. Mais elle est verrouillée.",
+        type: "basic",
+        turningPoint: true,
+        answers: [],
+        dialogId: 371,
+    },
+    {
+        id: 390,
+        content: "La porte n'est pas fermée. J'entends d'étranges bruits. Je l'ouvre ?",
+        type: "basic",
+        answers: [
+            {
+                content: "Oui, mais restez prudent.",
+                dialogId: 392
+            },
+            {
+                content: "Non, allez fouiller le bureau.",
+                dialogId: 400
+            },
+            {
+                content: "Non, allons à la porte en bois.",
+                dialogId: 380
+            }
+        ]
+    },
+    {
+        id: 391,
+        content: "La porte n'est pas fermée. J'entends d'étranges bruits. Je l'ouvre ?",
+        type: "basic",
+        answers: [
+            {
+                content: "Oui, mais restez prudent.",
+                dialogId: 392
+            },
+            {
+                content: "Non, allez fouiller le bureau.",
+                dialogId: 400
+            },
+            {
+                content: "Non, allons à la porte en bois.",
+                dialogId: 380
+            }
+        ]
+    },
+    {
+        id: 392,
+        content: "Il y a quelqu'un !",
+        type: "basic",
+        dialogId: 394,
+        answers: []
+    },
+    {
+        id: 394,
+        content: "C'est Paul Shaefer... Il avait supposément atteint son ascension... Il est assis sur une chaise au centre de la pièce. Il n'est pas attaché mais il n'essaie pas de s'enfuir. C'est comme s'il était mort... Et vivant à la fois.. Ces yeux me suivent mais je n'y décèle aucune conscience.",
+        type: "basic",
+        answers: [
+            {
+                content: "C'est peut-être la soumission chimique que Gabriel évoquait dans son fichier crypté...",
+                dialogId: 396
+            }
+        ]
+    },
+    {
+        id: 396,
+        content: "C'est ça oui. Il y a des fioles partout, des pétales de Datura et autres produits que je ne saurais reconnaître... Il tentait d'élaborer un mélange pour nous transformer en zombies à son service...",
+        type: "basic",
+        answers: [
+            {
+                content: "Il faudra peut-être sauver Paul.",
+                dialogId: 398,
+            },
+            {
+                content: "On ne peut pas prendre Paul avec nous, ce serait trop risqué.",
+                dialogId: 399,
+            }
+        ]
+    },
+    {
+        id: 398,
+        turningPoint: true,
+        type: "basic",
+        content: "Oui de toute façon, si le produit est efficace, il fera ce que je lui dis de faire.",
+        answers: [],
+        dialogId: 371,
+    },
+    {
+        id: 399,
+        turningPoint: true,
+        type: "basic",
+        content: "Vous avez peut-être raison, mieux vaut être sûr que je sorte d'ici pour pouvoir arrêter cette folie.",
+        answers: [],
+        dialogId: 371,
+    },
+    {
+        id: 400,
+        type: "image",
+        content: "Ok j'y suis. Il n'y a rien de notable sur le bureau mais un de ses tiroirs qui est fermé. Il y a des boutons avec d'étranges symboles dessus.",
+        media: "https://placehold.co/350x350",
+        answers: [
+            {
+                content: "Ok, jetons-y un oeil.",
+                dialogId: 410,
+            }
+        ]
+    },
+    {
+        id: 410,
+        type: "game",
+        media: "chestGame",
+        content: "",
+        answers: []
+    },
+    {
+        id: 420,
+        type: "basic",
+        content: "Je fouille le tiroir.",
+        answers: [],
+        dialogId: 422,
+    },
+    {
+        id: 422,
+        type: "basic",
+        content: "Ça y est je crois qu'on a tout. Il y a une dizaine de rapports semblable à celui qu'on a trouvé sur l'ordinateur. Tous statuent sur des décés, que des gens que j'appréciais...",
+        answers: [],
+        dialogId: 424
+    },
+    {
+        id: 424,
+        type: "basic",
+        turningPoint: true,
+        content: "Il y a aussi leurs effets personnels, une petite clef, une carte et un pistolet.",
+        answers: [
+            {
+                content: "Ok très bien, rassemblez les preuves et trouvez la sortie.",
+                dialogId: 426,
+            }
+        ]
+    },
+    {
+        id: 426,
+        type: "audio",
+        media: "",
+        content: "...",
+        answers: [
+            {
+                content: "Sauvez-vous Vernon !",
+                dialogId: 428
+            }
+        ]
+    },
+    {
+        id: 428,
+        type: "narrator",
+        content: "Vernon ne répond pas.",
+        answers: [
+            {
+                content: "Vernon ?",
+                dialogId: 429
+            }
+        ]
+    },
+    {
+        id: 429,
+        type: "narrator",
+        content: "Après une vingtaine de minutes de silence, le voilà qui répond.",
+        answers: [],
+        dialogId: 430
+    },
+    {
+        id: 430,
+        type: "basic",
+        content: "Je... j'ai ouvert la porte avec la petite clef et j'ai fui. Je suis dans un dédale de couloir souterrain, utilisez la carte et aidez-moi à m'y retrouver...",
+        answers: [
+            {
+                content: "Ok, c'est parti",
+                dialogId: 432
+            }
+        ]
+    },
+    {
+        id: 432,
+        type: "game",
+        content: "",
+        media: "caveGame",
+        answers: []
+    },
+    {
+        id: 433,
+        type: "video",
+        media: "out.mp4",
+        content: "",
+        answers: [
+            {
+                content: "Bien joué Vernon !",
+                dialogId: 435,
+            }
+        ]
+    },
+    {
+        id: 435,
+        type: "game",
+        media: "endGame",
+        content: "",
+        answers: []
     }
 ]

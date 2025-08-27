@@ -737,3 +737,79 @@ $width: 720px;
 
     }
 }
+
+.chest-game {
+    $chest-color: #da31a7;
+    $chest-color-light: color.adjust($chest-color, $lightness: +20%);
+    $chest-color-dark: color.adjust($chest-color, $lightness: -10%);
+    $chest-color-darker: color.adjust($chest-color, $lightness: -25%);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $chest-color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__hint {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__buttons {
+        display: flex;
+
+        margin: 12px 0;
+
+        &__button {
+            width: 75px;
+            height: 75px;
+            border-radius: 12px;
+            margin: 7px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: relative;
+            border: $chest-color-darker 3px solid;
+            cursor: pointer;
+            box-shadow: 0 0 5px $chest-color-darker;
+
+            &:hover {
+                box-shadow: inset 0 0 3px $chest-color-darker;
+            }
+
+            &:active {
+                box-shadow: inset 0 0 15px $chest-color-darker;
+            }
+        }
+    }
+
+    &__validate {
+        color: $white;
+        width: 100%;
+        border: $chest-color-darker 3px solid;
+        border-radius: 7px;
+        background-color: $chest-color-darker;
+        padding: 7px 12px;
+        font-weight: bolder;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $chest-color-dark;
+        }
+
+        &:active {
+            background-color: $chest-color-light;
+        }
+
+        &:disabled {
+            cursor: default;
+            border: $chest-color-dark 3px solid;
+            background-color: $chest-color-light;
+            color: $chest-color-dark;
+        }
+    }
+}
