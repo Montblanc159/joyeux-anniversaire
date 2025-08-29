@@ -2,7 +2,7 @@ import { type GameEvent } from "../games.js";
 import { audioReaction, playGameMusic } from "../audioSystem.js";
 
 const main = document.getElementsByTagName("main")[0];
-const password = "Waco";
+const password = "WACO";
 const gameEvent: GameEvent = { nextMessageId: 150 };
 
 export function passwordGameLauncher(): DocumentFragment {
@@ -76,7 +76,7 @@ function initGame(eventElement: DocumentFragment) {
 }
 
 function checkPassword(input: string) {
-    return input === password
+    return input.toUpperCase() === password
 }
 
 function loadingText() {

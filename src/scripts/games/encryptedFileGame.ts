@@ -4,7 +4,7 @@ import { audioReaction, playGameMusic } from "../audioSystem.js";
 const clearSentences = [
     "ONZE NOVEMBRE DEUX MILLE DIX HUIT",
     "PROTOCOLE D ESSAI NUMERO SEIZE",
-    "SUJET: ELISABETH R.",
+    "SUJET: IRENE G.",
     "STATUT: ECHEC",
     "CAUSE: DECES APRES ARRET DES FONCTIONS CEREBRALES",
     "DESCRIPTION: ",
@@ -16,9 +16,14 @@ const clearSentences = [
     "EFFETS PERSONNELS STOCKES EN LIEU SUR."
 ]
 
+const altSentence = "ASILE D'ARKHAM: RECHERCHE D UN TRAITEMENT CONTRE LE GOUROUTISME";
+const altKey = "ASILE"
+const encryptedAltSentence = vigenereNums(altSentence, altKey, true)
+
 const key = "TEMPLEDUPEUPLE";
 const encryptedSentences = clearSentences.map((clearSentence) => vigenereNums(clearSentence, key, true));
 const gameEvent: GameEvent = { nextMessageId: 220 };
+const altEndEvent: GameEvent = { nextMessageId: 990 };
 const baseName = "encrypted-file-game"
 const main = document.getElementsByTagName("main")[0];
 
@@ -73,7 +78,7 @@ function initGame(eventElement: DocumentFragment) {
 
         file.className = baseName + "__file"
         fileDescription.className = baseName + "__file__description"
-        fileDescription.textContent = "/home/gaby/privé/201811082034-rapport.txt"
+        fileDescription.textContent = "/home/arkham/privé/201811082034-rapport.txt"
 
         let cypher: Array<HTMLParagraphElement> = [];
 
@@ -83,12 +88,18 @@ function initGame(eventElement: DocumentFragment) {
             cypher.push(p);
         })
 
+        let sig = file.appendChild(document.createElement("p"));
+        sig.textContent = encryptedAltSentence;
+        sig.className = baseName + "__file__sig"
+
         main.appendChild(fragment);
 
         input.addEventListener("input", () => {
             cypher.forEach((p, index) => {
                 p.textContent = vigenereNums(encryptedSentences[index], input.value, false);
             })
+
+            sig.textContent = vigenereNums(encryptedAltSentence, input.value, false);
 
             if (input.value.toUpperCase().replaceAll(" ", "") === key) {
                 audioReaction("success");
@@ -101,6 +112,20 @@ function initGame(eventElement: DocumentFragment) {
 
                 validateBtn.addEventListener("click", () => {
                     eventElement.dispatchEvent(new CustomEvent("won", { detail: gameEvent }));
+                });
+
+                input.after(validateBtn);
+            } else if (input.value.toUpperCase().replaceAll(" ", "") === altKey) {
+                audioReaction("success");
+                input.disabled = true;
+                input.className += "--success";
+
+                const validateBtn = document.createElement("button")
+                validateBtn.textContent = "✓"
+                validateBtn.className = baseName + "__deencryptor__validate";
+
+                validateBtn.addEventListener("click", () => {
+                    eventElement.dispatchEvent(new CustomEvent("won", { detail: altEndEvent }));
                 });
 
                 input.after(validateBtn);

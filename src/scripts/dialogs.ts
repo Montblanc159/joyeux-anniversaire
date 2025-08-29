@@ -40,7 +40,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 20,
         type: "basic",
-        content: "Je suis Vernon Howell. Vous ne me connaissez pas.",
+        content: "Je suis Vernon W.H. Vous ne me connaissez pas.",
         answers: [
             {
                 content: "Pourquoi me contacter ?",
@@ -84,10 +84,10 @@ export const dialogs: Array<Dialog> = [
     {
         id: 60,
         type: "basic",
-        content: "Seigneur Gabriel nous a annoncé que le monde ne survivra pas au maximum de l'étoile variable zêta des gémeaux. Ce sera le 20 septembre.",
+        content: "Seigneur Arkham nous a annoncé que le monde ne survivra pas au maximum de l'étoile variable zêta des gémeaux. Ce sera le 20 septembre.",
         answers: [
             {
-                content: "C'est de la folie... Qui est ce Gabriel ?",
+                content: "C'est de la folie... Qui est ce Arkham ?",
                 dialogId: 70,
             }
         ],
@@ -153,7 +153,7 @@ export const dialogs: Array<Dialog> = [
         content: "Vous sentez qu'argumenter contre son mysticisme ne vous ménera nulle part",
         answers: [
             {
-                content: "Trouvons les plans de Gabriel",
+                content: "Trouvons les plans d'Arkham",
                 dialogId: 130,
             }
         ],
@@ -243,7 +243,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 220,
         type: "basic",
-        content: "Oh mon dieu... Ellie... Non, ce n'est pas possible...",
+        content: "Oh mon dieu... Irène... Non, ce n'est pas possible...",
         answers: [
             {
                 content: "Vous la connaissiez ?",
@@ -254,7 +254,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 230,
         type: "basic",
-        content: "C'est... C'était une fervente fidèle de Gabriel... Et une personne qui m'était très chère... Elle devait réaliser son ascension.",
+        content: "C'est... C'était une fervente fidèle d'Arkham... Et une personne qui m'était très chère... Elle devait réaliser son ascension.",
         answers: [],
         dialogId: 240
     },
@@ -456,7 +456,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 312,
         type: "basic",
-        content: "C'est le plus beau lieu du Havre. Il est magnifique, couvert de dorures et de peintures à la gloire de notre Seigneur Gabriel. C'est ici qu'en sa présence nous pratiquons la méditation dynamique qui nous permettra de devenir des êtres de lumières, pour finalement faire notre ascension.",
+        content: "C'est le plus beau lieu du Havre. Il est magnifique, couvert de dorures et de peintures à la gloire de notre Seigneur Arkham. C'est ici qu'en sa présence nous pratiquons la méditation dynamique qui nous permettra de devenir des êtres de lumières, pour finalement faire notre ascension.",
         answers: [
             {
                 content: "Regardez autour de vous.",
@@ -635,7 +635,7 @@ export const dialogs: Array<Dialog> = [
     },
     {
         id: 350,
-        content: "L'entrée s'est refermée derrière moi. J'ai descendu les escaliers, et maintenant je suis dans une pièce qui ressemble à une luxueuse suite d'hôtel. Les murs sont tapissés d'images obscènes, et de photos de Gabriel.",
+        content: "L'entrée s'est refermée derrière moi. J'ai descendu les escaliers, et maintenant je suis dans une pièce qui ressemble à une luxueuse suite d'hôtel. Les murs sont tapissés d'images obscènes, et de photos d'Arkham.",
         type: "basic",
         dialogId: 360,
         answers: []
@@ -744,11 +744,11 @@ export const dialogs: Array<Dialog> = [
     },
     {
         id: 394,
-        content: "C'est Paul Shaefer... Il avait supposément atteint son ascension... Il est assis sur une chaise au centre de la pièce. Il n'est pas attaché mais il n'essaie pas de s'enfuir. C'est comme s'il était mort... Et vivant à la fois.. Ces yeux me suivent mais je n'y décèle aucune conscience.",
+        content: "C'est Paul S... Il avait supposément atteint son ascension... Il est assis sur une chaise au centre de la pièce. Il n'est pas attaché mais il n'essaie pas de s'enfuir. C'est comme s'il était mort... Et vivant à la fois.. Ces yeux me suivent mais je n'y décèle aucune conscience.",
         type: "basic",
         answers: [
             {
-                content: "C'est peut-être la soumission chimique que Gabriel évoquait dans son fichier crypté...",
+                content: "C'est peut-être la soumission chimique qu'Arkham évoquait dans son fichier crypté...",
                 dialogId: 396
             }
         ]
@@ -884,7 +884,7 @@ export const dialogs: Array<Dialog> = [
         content: "",
         answers: [
             {
-                content: "Bien joué Vernon !",
+                content: "[FIN DU JEU]",
                 dialogId: 435,
             }
         ]
@@ -895,5 +895,72 @@ export const dialogs: Array<Dialog> = [
         media: "endGame",
         content: "",
         answers: []
-    }
+    },
+    {
+        id: 990,
+        type: "basic",
+        content: "...",
+        answers: [
+            {
+                content: "Comment ça asile d'arkham ?! Vous êtes dans un asile ?",
+                dialogId: 992,
+            }
+        ]
+    },
+    {
+        id: 992,
+        type: "basic",
+        content: "On ne peut rien vous cacher...",
+        answers: [
+            {
+                content: "Vous avez essayé de me rouler dans la farine. Qui êtes-vous ?",
+                dialogId: 994,
+            }
+        ]
+    },
+    {
+        id: 994,
+        type: "basic",
+        content: "Comment le Christ se révèle-t-il dans le quatrième sceau ?",
+        answers: [
+            {
+                content: "Comme un cavalier sur un cheval pâle.",
+                dialogId: 995,
+            }
+        ]
+    },
+
+    {
+        id: 995,
+        type: "basic",
+        content: "Et quel était son nom ?",
+        answers: [
+            {
+                content: "Mort !",
+                dialogId: 996,
+            }
+        ]
+    },
+    {
+        id: 996,
+        type: "basic",
+        content: "Vous savez ce que signifie Koresh ?",
+        answers: [
+            {
+                content: "Dites le moi !",
+                dialogId: 997,
+            }
+        ]
+    },
+    {
+        id: 997,
+        type: "basic",
+        content: "Cela veut dire : mort !",
+        answers: [
+            {
+                content: "[FIN DU JEU]",
+                dialogId: 435,
+            }
+        ]
+    },
 ]
