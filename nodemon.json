@@ -1,9 +1,8 @@
 {
   "watch": [
-    "src",
     "devserver.js"
   ],
-  "ext": ".ts, .scss, .json",
+  "ext": ".js",
   "ignore": [],
-  "exec": "sass --style=expanded src/stylesheets:public && tsc && node devserver.js"
+  "exec": "node devserver.js"
 }

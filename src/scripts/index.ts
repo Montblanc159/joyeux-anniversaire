@@ -1,4 +1,6 @@
-import "./cookies.js"
-import "./audioSystem.js"
-import "./dialogsSystem.js"
-import "./cluesSystem.js"
+import "./cookies.ts"
+import "./audioSystem.ts"
+import "./dialogsSystem.ts"
+import "./cluesSystem.ts"
+
+import "../stylesheets/index.scss"

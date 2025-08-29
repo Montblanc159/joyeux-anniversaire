@@ -5,8 +5,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon",
-    "build": "tsc",
+    "build": "webpack",
+    "start": "webpack --watch & nodemon",
+    "oldStart": "nodemon",
+    "oldBuild": "tsc",
     "lint": "eslint . --fix",
     "type": "tsc --noEmit"
   },
@@ -17,12 +19,20 @@
     "@tsconfig/node20": "^20.1.6",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
+    "css-loader": "^7.1.2",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "express": "^5.1.0",
+    "live-server": "^1.2.2",
     "nodemon": "^3.1.10",
+    "phaser": "^3.90.0",
     "prettier": "^3.6.2",
-    "sass": "^1.90.0"
+    "sass": "^1.90.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
   }
 }

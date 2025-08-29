@@ -789,7 +789,7 @@ $width: 720px;
 
     &__validate {
         color: $white;
-        width: 100%;
+        width: 100px;
         border: $chest-color-darker 3px solid;
         border-radius: 7px;
         background-color: $chest-color-darker;
@@ -811,5 +811,34 @@ $width: 720px;
             background-color: $chest-color-light;
             color: $chest-color-dark;
         }
+    }
+}
+
+.cave-game {
+    $cave-color: #38342e;
+    $cave-color-light: color.adjust($cave-color, $lightness: +20%);
+    $cave-color-dark: color.adjust($cave-color, $lightness: -10%);
+    $cave-color-darker: color.adjust($cave-color, $lightness: -25%);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $cave-color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    canvas {
+        border-radius: 25px;
+        border: $cave-color-darker 3px solid;
+    }
+
+    &__winner {
+        position: absolute;
+        margin: 5px auto;
+        font-size: 15rem;
     }
 }

@@ -83,14 +83,16 @@ function initGame(eventElement: DocumentFragment) {
 
                 userInput.push(chakraName);
 
-                if (userInput.every((input, index) => input === key[index])) {
+                if (userInput.length == key.length && userInput.every((input, index) => input === key[index])) {
                     audioReaction("success");
 
                     const btn = section.appendChild(document.createElement("button"));
                     btn.textContent = "OUVRIR";
-                    btn.className = "baseName" + "__validate"
+                    btn.className = baseName + "__validate"
 
-                    eventElement.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
+                    btn.addEventListener("click", () => {
+                        eventElement.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
+                    })
                 }
             })
         })

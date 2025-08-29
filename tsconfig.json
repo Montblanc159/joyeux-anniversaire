@@ -2,18 +2,24 @@
   // "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
     "strict": true,
-    "target": "ES6",
+    "target": "es5",
     "noImplicitAny": true,
     "noImplicitReturns": true,
-    "module": "es2022",
-    "moduleResolution": "bundler",
+    "module": "es6",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "outDir": "public",
     "sourceMap": true,
     "lib": [
       "ESNEXT",
-      "DOM"
+      "DOM",
+      "DOM.Iterable",
+      "scripthost",
+    ],
+    "typeRoots": [
+      "src/@types",
+      "node_modules/@types"
     ]
   },
   "include": [
