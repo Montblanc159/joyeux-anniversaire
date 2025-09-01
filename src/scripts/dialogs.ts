@@ -243,6 +243,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 220,
         type: "basic",
+        turningPoint: true,
         content: "Oh mon dieu... Irène... Non, ce n'est pas possible...",
         answers: [
             {
@@ -900,6 +901,7 @@ export const dialogs: Array<Dialog> = [
         id: 990,
         type: "basic",
         content: "...",
+        turningPoint: true,
         answers: [
             {
                 content: "Comment ça asile d'arkham ?! Vous êtes dans un asile ?",

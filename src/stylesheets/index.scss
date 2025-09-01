@@ -846,3 +846,70 @@ $width: 720px;
         font-size: 15rem;
     }
 }
+
+.end-game {
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+    $end-color: #ffffff;
+    $end-color-light: color.adjust($end-color, $lightness: +20%);
+    $end-color-dark: color.adjust($end-color, $lightness: -10%);
+    $end-color-darker: color.adjust($end-color, $lightness: -85%);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $end-color-dark;
+    color: $end-color-darker;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        font-family: "Diplomata SC", serif;
+        font-weight: 900;
+        font-style: normal;
+        max-width: 550px;
+        text-align: center;
+        border-bottom: $end-color-darker 2px solid;
+    }
+
+    &__text {
+        max-width: 550px;
+        font-family: "Crimson Text", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+
+    &__reset {
+        margin-top: 25px;
+        background-color: $end-color-darker;
+        color: $white;
+        border: $end-color-darker 3px solid;
+        border-radius: 7px;
+        background-color: $end-color-darker;
+        padding: 7px 12px;
+        font-weight: bolder;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $end-color-dark;
+        }
+
+        &:active {
+            background-color: $end-color-light;
+        }
+
+        &:disabled {
+            cursor: default;
+            border: $end-color-dark 3px solid;
+            background-color: $end-color-light;
+            color: $end-color-dark;
+        }
+    }
+}

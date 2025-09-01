@@ -6,6 +6,7 @@ import { sesameGameLauncher } from "./games/sesameGame.js"
 import { reconnectGameLauncher } from "./games/reconnectGame.js"
 import { chestGameLauncher } from "./games/chestGame.js"
 import { caveGameLauncher } from "./games/caveGame.js"
+import { endGameLauncher } from "./games/endGame.js"
 
 export const games: { [index: string]: () => DocumentFragment } = {
     passwordGame: passwordGameLauncher,
@@ -16,6 +17,7 @@ export const games: { [index: string]: () => DocumentFragment } = {
     reconnectGame: reconnectGameLauncher,
     chestGame: chestGameLauncher,
     caveGame: caveGameLauncher,
+    endGame: endGameLauncher,
 }
 
 export type GameEvent = {

@@ -31,4 +31,9 @@ export function checkCookie(): void {
     }
 }
 
+export function resetCookie(): void {
+    setCookie("dialogsPath", JSON.stringify([]), 30);
+    setCookie("lastDialog", JSON.stringify(0), 30);
+}
+
 checkCookie();
