@@ -10,6 +10,8 @@ export function passwordGameLauncher(): DocumentFragment {
     const div = fragment.appendChild(document.createElement("div"))
     const p = div.appendChild(document.createElement("p"));
 
+    audioReaction("booting");
+
     p.textContent = "Programme lancé...";
     div.className = "chat__messages__game";
 
@@ -19,7 +21,7 @@ export function passwordGameLauncher(): DocumentFragment {
 }
 
 function initGame(eventElement: DocumentFragment) {
-    playGameMusic("gameOne");
+    playGameMusic("passwordGame");
 
     const fragment = document.createDocumentFragment();
     const loading = loadingText();
@@ -66,6 +68,8 @@ function initGame(eventElement: DocumentFragment) {
         button.addEventListener("click", () => {
             if (checkPassword(input.value)) {
                 audioReaction("success");
+                playGameMusic("main");
+
                 eventElement.dispatchEvent(new CustomEvent("won", { detail: gameEvent }));
             } else {
                 audioReaction("error");

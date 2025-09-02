@@ -119,13 +119,10 @@ function createGameMessage(dialog: Dialog): DocumentFragment {
         const game = games[dialog.media];
 
         if (game) {
-            audioReaction("booting");
             let gameElement = game();
 
             gameElement.addEventListener("won", (event: CustomEventInit<GameEvent>) => {
                 document.getElementById("game")?.remove();
-                playGameMusic("main");
-
                 if (event.detail) {
                     nextMessage(event.detail.nextMessageId)
                 }
@@ -133,8 +130,6 @@ function createGameMessage(dialog: Dialog): DocumentFragment {
 
             gameElement.addEventListener("quit", (event: CustomEventInit<GameEvent>) => {
                 document.getElementById("game")?.remove();
-                playGameMusic("main");
-
                 if (event.detail) {
                     nextMessage(event.detail.nextMessageId)
                 }

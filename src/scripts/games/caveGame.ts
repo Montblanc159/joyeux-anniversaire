@@ -2,6 +2,24 @@ import { type GameEvent } from "../games.js";
 import { audioReaction, playGameMusic } from "../audioSystem.js";
 import "phaser";
 
+const gameSoundFXMapping = Object.freeze({
+    walk: "static/audios/walk.ogg",
+    jump: "static/audios/jump.ogg"
+});
+
+function audioFX(eventName: keyof typeof gameSoundFXMapping, loop?: boolean) {
+    const audio = new Audio(gameSoundFXMapping[eventName])
+    audio.loop = !!loop;
+
+    return audio;
+}
+
+const gameSoundFx = Object.freeze({
+    walk: audioFX("walk", true),
+    jump: audioFX("jump")
+});
+
+
 class CaveGame extends Phaser.Scene {
     player?: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
     levelMap?: Phaser.Tilemaps.Tilemap;
@@ -95,7 +113,7 @@ class CaveGame extends Phaser.Scene {
         this.anims.create({
             key: 'left',
             frames: this.anims.generateFrameNumbers('dude', { start: 16, end: 23 }),
-            frameRate: 10,
+            frameRate: 24,
             repeat: -1
         });
 
@@ -109,7 +127,7 @@ class CaveGame extends Phaser.Scene {
         this.anims.create({
             key: 'right',
             frames: this.anims.generateFrameNumbers('dude', { start: 24, end: 31 }),
-            frameRate: 10,
+            frameRate: 24,
             repeat: -1
         });
 
@@ -121,15 +139,21 @@ class CaveGame extends Phaser.Scene {
         if (cursors?.left.isDown) {
             this.player?.setVelocityX(-160);
 
+            gameSoundFx["walk"].play();
+
             this.player?.anims.play('left', true);
         }
         else if (cursors?.right.isDown) {
             this.player?.setVelocityX(160);
 
+            gameSoundFx["walk"].play();
+
             this.player?.anims.play('right', true);
         }
         else {
             this.player?.setVelocityX(0);
+
+            gameSoundFx["walk"].pause();
 
             this.player?.anims.play('turn');
         }
@@ -137,11 +161,15 @@ class CaveGame extends Phaser.Scene {
         let x = -160
 
         if (cursors?.space.isDown && this.player?.body.blocked.down) {
+            gameSoundFx["jump"].play();
+
             this.player?.setVelocityY(x);
         }
 
 
         if (cursors?.space.isDown && !this.player?.body.blocked.down && (this.player?.body.blocked.left || this.player?.body.blocked.right)) {
+            gameSoundFx["jump"].play();
+
             this.player?.setVelocityY(x);
         }
     }
@@ -177,6 +205,8 @@ export function caveGameLauncher(): DocumentFragment {
     const div = fragment.appendChild(document.createElement("div"))
     const p = div.appendChild(document.createElement("p"));
 
+    audioReaction("booting");
+
     p.textContent = "Ouverture de la carte...";
     div.className = "chat__messages__game";
 
@@ -186,7 +216,7 @@ export function caveGameLauncher(): DocumentFragment {
 }
 
 function initGame(eventElement: DocumentFragment) {
-    playGameMusic("gameOne");
+    playGameMusic("caveGame", 0.4);
 
     const fragment = document.createDocumentFragment();
     const loading = loadingText();
@@ -227,6 +257,7 @@ function gameWon() {
     winText.textContent = "LIBERTÉ";
 
     setTimeout(() => {
+        playGameMusic("endGame");
         fragment.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
     }, 3000)
 }

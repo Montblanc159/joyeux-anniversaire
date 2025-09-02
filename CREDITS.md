@@ -1,3 +1,12 @@
 https://github.com/fuhton/piano-mp3 => piano mp3 audios
 tiles => [Lanea Zimmerman](https://opengameart.org/content/dirt-platformer-tiles)
 character => [thekingphoenix/Bonsaiheldin](https://opengameart.org/content/pixel-character-with-gun)
+[Pixel game music](https://opengameart.org/content/determined-pursuit-epic-orchestra-loop)
+[End game music](https://opengameart.org/content/emotional-piano-loop)
+[Reconnect game](https://opengameart.org/content/dark-city)
+[Encrypted file game](https://opengameart.org/content/horror-atmosphere)
+[Chest game](https://opengameart.org/content/searching)
+[Kitchen game](https://opengameart.org/content/ambience-pack-1-sci-fi-horror)
+[Piano game]([https://opengameart.org/content/cursed-temple](https://opengameart.org/content/dark-ambiance))
+[Sesame game](https://opengameart.org/content/dark-ambiance)
+[Jump and walk in cave game](https://opengameart.org/content/sfx-the-ultimate-2017-16-bit-mini-pack)

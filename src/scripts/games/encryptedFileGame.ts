@@ -32,6 +32,8 @@ export function encryptedFileGameLauncher(): DocumentFragment {
     const div = fragment.appendChild(document.createElement("div"))
     const p = div.appendChild(document.createElement("p"));
 
+    audioReaction("booting");
+
     p.textContent = "Ouverture du fichier...";
     div.className = "chat__messages__game";
 
@@ -41,7 +43,7 @@ export function encryptedFileGameLauncher(): DocumentFragment {
 }
 
 function initGame(eventElement: DocumentFragment) {
-    playGameMusic("gameOne");
+    playGameMusic("encryptedFileGame");
 
     const fragment = document.createDocumentFragment();
     const loading = loadingText();
@@ -125,6 +127,8 @@ function initGame(eventElement: DocumentFragment) {
                 validateBtn.className = baseName + "__deencryptor__validate";
 
                 validateBtn.addEventListener("click", () => {
+                    playGameMusic("main");
+
                     eventElement.dispatchEvent(new CustomEvent("won", { detail: altEndEvent }));
                 });
 

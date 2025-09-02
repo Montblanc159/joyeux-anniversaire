@@ -14,6 +14,8 @@ export function kitchenGameLauncher(): DocumentFragment {
     const div = fragment.appendChild(document.createElement("div"))
     const p = div.appendChild(document.createElement("p"));
 
+    audioReaction("booting");
+
     p.textContent = "Ouverture du logiciel...";
     div.className = "chat__messages__game";
 
@@ -23,7 +25,7 @@ export function kitchenGameLauncher(): DocumentFragment {
 }
 
 function initGame(eventElement: DocumentFragment) {
-    playGameMusic("gameOne");
+    playGameMusic("kitchenGame");
 
     const fragment = document.createDocumentFragment();
     const loading = loadingText();
@@ -71,6 +73,8 @@ function initGame(eventElement: DocumentFragment) {
         section.appendChild(quitBtn);
 
         quitBtn.addEventListener("click", () => {
+            playGameMusic("main");
+
             eventElement.dispatchEvent(new CustomEvent("quit", { detail: quitGameEvent }));
         });
 
@@ -88,6 +92,8 @@ function initGame(eventElement: DocumentFragment) {
                     quitBtn.disabled = true;
 
                     validateBtn.addEventListener("click", () => {
+                        playGameMusic("main");
+
                         eventElement.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
                     });
                 }

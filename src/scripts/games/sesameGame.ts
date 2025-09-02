@@ -14,6 +14,8 @@ export function sesameGameLauncher(): DocumentFragment {
     const div = fragment.appendChild(document.createElement("div"))
     const p = div.appendChild(document.createElement("p"));
 
+    audioReaction("booting");
+
     p.textContent = "Ouverture du logiciel...";
     div.className = "chat__messages__game";
 
@@ -23,7 +25,7 @@ export function sesameGameLauncher(): DocumentFragment {
 }
 
 function initGame(eventElement: DocumentFragment) {
-    playGameMusic("gameOne");
+    playGameMusic("sesameGame");
 
     const fragment = document.createDocumentFragment();
     const loading = loadingText();
@@ -65,6 +67,7 @@ function initGame(eventElement: DocumentFragment) {
         quitBtn.className = baseName + "__quit";
 
         quitBtn.addEventListener("click", () => {
+            playGameMusic("main");
             eventElement.dispatchEvent(new CustomEvent("quit", { detail: quitGameEvent }));
         });
 
@@ -74,6 +77,7 @@ function initGame(eventElement: DocumentFragment) {
             utter.addEventListener("end", () => {
                 if (input.value.toUpperCase() === key) {
                     audioReaction("success")
+                    playGameMusic("main");
                     eventElement.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
                 } else {
                     audioReaction("error")

@@ -14,6 +14,8 @@ export function reconnectGameLauncher(): DocumentFragment {
     const div = fragment.appendChild(document.createElement("div"))
     const p = div.appendChild(document.createElement("p"));
 
+    // audioReaction("booting");
+
     p.textContent = "Déconnexion...";
     div.className = "chat__messages__game";
 
@@ -23,7 +25,7 @@ export function reconnectGameLauncher(): DocumentFragment {
 }
 
 function initGame(fragment: DocumentFragment) {
-    playGameMusic("gameOne");
+    playGameMusic("reconnectGame");
 
     const clues = document.getElementsByClassName("clues")[0] as HTMLElement;
 
@@ -71,6 +73,8 @@ function build_ui(fragment: DocumentFragment, section: HTMLElement) {
                 }
 
                 audioReaction("booting");
+
+                playGameMusic("main");
                 fragment.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
             } else {
                 input.remove();

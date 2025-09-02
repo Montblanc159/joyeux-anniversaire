@@ -1,4 +1,3 @@
-
 const uiSoundFX = Object.freeze({
     msgReceived: "static/audios/msg-notif.mp3",
     msgSent: "static/audios/sent-notif.mp3",
@@ -12,7 +11,15 @@ const uiSoundFX = Object.freeze({
 const bgMusics = Object.freeze(
     {
         main: "static/audios/main-bg-music.mp3",
-        gameOne: "static/audios/game-one-bg-music.mp3"
+        caveGame: "static/audios/cave-game.mp3",
+        chestGame: "static/audios/chest-game.mp3",
+        encryptedFileGame: "static/audios/encrypted-file-game.mp3",
+        endGame: "static/audios/end-game.mp3",
+        kitchenGame: "static/audios/kitchen-game.mp3",
+        passwordGame: "static/audios/password-game.mp3",
+        pianoGame: "static/audios/piano-game.mp3",
+        reconnectGame: "static/audios/reconnect-game.mp3",
+        sesameGame: "static/audios/sesame-game.mp3",
     }
 )
 
@@ -25,9 +32,13 @@ export function audioReaction(eventName: keyof typeof uiSoundFX) {
     })
 }
 
-export function playGameMusic(src?: keyof typeof bgMusics) {
+export function playGameMusic(src?: keyof typeof bgMusics, volume?: number) {
     if (src) {
         bgAudio.src = bgMusics[src];
+    }
+
+    if (volume) {
+        bgAudio.volume = volume;
     }
 
     bgAudio.play();

@@ -29,6 +29,8 @@ export function pianoGameLauncher(): DocumentFragment {
     const div = fragment.appendChild(document.createElement("div"))
     const p = div.appendChild(document.createElement("p"));
 
+    audioReaction("booting");
+
     p.textContent = "Ouverture de l'interface audio...";
     div.className = "chat__messages__game";
 
@@ -38,7 +40,7 @@ export function pianoGameLauncher(): DocumentFragment {
 }
 
 function initGame(eventElement: DocumentFragment) {
-    playGameMusic("gameOne");
+    playGameMusic("pianoGame");
 
     const fragment = document.createDocumentFragment();
     const loading = loadingText();
@@ -79,6 +81,7 @@ function initGame(eventElement: DocumentFragment) {
 
                 if (userInput.join("") == key) {
                     audioReaction("success");
+                    playGameMusic("main");
                     eventElement.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
                 };
             });
@@ -93,6 +96,8 @@ function initGame(eventElement: DocumentFragment) {
         section.appendChild(quitBtn);
 
         quitBtn.addEventListener("click", () => {
+            playGameMusic("main");
+
             eventElement.dispatchEvent(new CustomEvent("quit", { detail: quitGameEvent }));
         });
 

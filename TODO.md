@@ -13,9 +13,6 @@
 - video for out ending
 
 ## audio
-- end audio
-- audio for each games
-- audio for caveGame actions
 - special audio for alt ending
 
 ## Enigme

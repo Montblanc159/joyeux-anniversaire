@@ -32,7 +32,7 @@ export function endGameLauncher(): DocumentFragment {
 }
 
 function initGame(fragment: DocumentFragment) {
-    playGameMusic("gameOne");
+    // playGameMusic("endGame");
 
     const loading = loadingText();
     const section = fragment.appendChild(document.createElement("section"));
