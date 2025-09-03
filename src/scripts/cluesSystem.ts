@@ -30,7 +30,7 @@ export function addClues() {
                 let icon = link.appendChild(document.createElement("img"));
 
 
-                icon.src = clue?.icon || "static/images/default-clue-icon.webp";
+                icon.src = clue?.icon || "static/images/default-clue-icon.svg";
                 icon.className = baseName + "__link__icon";
 
                 link.className = baseName + "__link";

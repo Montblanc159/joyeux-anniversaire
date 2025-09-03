@@ -11,6 +11,7 @@ export const clues: Array<Clue> = [
     {
         title: "Fichier : plan-havre.jpg",
         type: "image",
+        icon: "static/images/treasure-map.svg",
         content: [],
         media: "https://placehold.co/350x350",
         dialogId: 190
@@ -18,6 +19,7 @@ export const clues: Array<Clue> = [
     {
         title: "Fichier : cultissime.txt",
         dialogId: 180,
+        icon: "static/images/open-folder.svg",
         type: "text",
         content: [
             "AVEC UNE CLEF, LA CRYPTE S'OUVRE",
@@ -28,16 +30,18 @@ export const clues: Array<Clue> = [
         title: "Note : Tripoli",
         dialogId: 303,
         type: "text",
+        icon: "static/images/folded-paper.svg",
         content: [
-            "Trouve la vrai dénomination de cet affabulateur qui voulut dupliquer un humain",
+            "Trouve la vraie dénomination de cet affabulateur qui voulut dupliquer un humain",
             "Puis le surnom final de ce gourou qui ne jurait que par \"Zorba le bouddha\"",
-            "Enfin, lie les prénoms de ces deux fondateurs qui voyaient le messie dans une soucoupe",
-            "À chacun, calcul leur nombre intime."
+            "Enfin, lie les prénoms de ces deux fondateurs qui voyaient le Messie dans une soucoupe",
+            "À chacun, calcule son nombre intime."
         ]
     },
     {
         title: "Note : M**** !",
         dialogId: 313,
+        icon: "static/images/envelope.svg",
         type: "text",
         content: [
             "Est-il aussi clair dans un miroir ?"
@@ -45,12 +49,14 @@ export const clues: Array<Clue> = [
     },
     {
         title: "Note : Sésame",
+        icon: "static/images/tied-scroll.svg",
         dialogId: 308,
         type: "text",
         content: []
     },
     {
         title: "Papier à musique : Ut queant laxis",
+        icon: "static/images/g-clef.svg",
         dialogId: 316,
         type: "text",
         content: [

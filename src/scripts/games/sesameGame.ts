@@ -7,7 +7,7 @@ const quitGameEvent: GameEvent = { nextMessageId: 309 };
 const baseName = "sesame-game"
 const main = document.getElementsByTagName("main")[0];
 
-const key = "SEPT CHAKRAS";
+const key = "SEPTCHAKRAS";
 
 export function sesameGameLauncher(): DocumentFragment {
     const fragment = document.createDocumentFragment();
@@ -75,7 +75,7 @@ function initGame(eventElement: DocumentFragment) {
             let utter = utterance(input.value);
 
             utter.addEventListener("end", () => {
-                if (input.value.toUpperCase() === key) {
+                if (input.value.toUpperCase().replace(/\s/g, "") === key) {
                     audioReaction("success")
                     playGameMusic("main");
                     eventElement.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));

@@ -94,6 +94,10 @@ $width: 720px;
             color: $secondary-color;
         }
 
+        video {
+            max-width: 100%;
+        }
+
         &__narrator {
             color: $secondary-color;
         }

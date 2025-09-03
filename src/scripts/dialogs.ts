@@ -51,7 +51,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 30,
         type: "basic",
-        content: "Un proche m'a soufflé votre nom, il m'a assuré que vous êtiez une spécialiste des sectes",
+        content: "Un proche m'a soufflé votre nom, il m'a assuré que vous étiez une spécialiste des sectes.",
         answers: [
             {
                 content: "Qui est ce proche ?",
@@ -62,7 +62,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 40,
         type: "basic",
-        content: "Je ne peux pas vous le dire, je le mettrais en danger",
+        content: "Je ne peux pas vous le dire, je le mettrais en danger.",
         answers: [
             {
                 content: "Que vous arrive-t-il ?",
@@ -84,7 +84,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 60,
         type: "basic",
-        content: "Seigneur Arkham nous a annoncé que le monde ne survivra pas au maximum de l'étoile variable zêta des gémeaux. Ce sera le 20 septembre.",
+        content: "Seigneur Arkham nous a annoncé que le monde ne survivra pas au maximum de l'étoile variable zêta des Gémeaux. Ce sera le 20 septembre.",
         answers: [
             {
                 content: "C'est de la folie... Qui est ce Arkham ?",
@@ -95,7 +95,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 70,
         type: "basic",
-        content: "C'est notre prophète. Ces paroles m'ont guidés durant ces dix dernières années. Je commet l'ultime trahison à venir vous parler... Mais je ne peux me résoudre à voir mes proches mourir, ni à mourir moi-même... Je n'en ai pas le courage et puis... J'ai des doutes...",
+        content: "C'est notre prophète. Ces paroles m'ont guidé durant ces dix dernières années. Je commets l'ultime trahison en venant vous parler... Mais je ne peux me résoudre à voir mes proches mourir, ni à mourir moi-même... Je n'en ai pas le courage et puis... J'ai des doutes...",
         answers: [],
         dialogId: 75,
     },
@@ -113,7 +113,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 80,
         type: "video",
-        media: "static/videos/guru.mp4",
+        media: "static/videos/80.webm",
         content: "Me croyez-vous maintenant ?",
         answers: [
             {
@@ -125,17 +125,17 @@ export const dialogs: Array<Dialog> = [
     {
         id: 100,
         type: "basic",
-        content: "NON, SURTOUT PAS ! Cela précipiterait la mort de tout le monde. Il nous a prévenu, toute intrusion du monde extérieur dans notre Havre nous anéantira. Il refuse de nous voir souffrir la fin des temps.",
+        content: "NON, SURTOUT PAS ! Cela précipiterait la mort de tout le monde. Il nous a prévenus, toute intrusion du monde extérieur dans notre Havre nous anéantira. Il refuse de nous voir souffrir la fin des temps.",
         answers: [],
         dialogId: 105,
     },
     {
         id: 105,
         type: "basic",
-        content: "Non, je dois contre-carrer ses plans, rassembler des preuves de sa corruption et convaincre mes semblables de revenir sur le chemin des êtres de lumière. Et pour ça j'ai besoin de vos connaissances et de votre perspicacité.",
+        content: "Non, je dois contrecarrer ses plans, rassembler des preuves de sa corruption et convaincre mes semblables de revenir sur le chemin des êtres de lumière. Et pour ça j'ai besoin de vos connaissances et de votre perspicacité.",
         answers: [
             {
-                content: "Il n'y a pas 'd'êtres de lumière' ni 'd'êtres du néant' !",
+                content: "Il n'y a pas \"d'êtres de lumière\" ni \"d'êtres du néant\" !",
                 dialogId: 110,
             }
         ]
@@ -143,17 +143,17 @@ export const dialogs: Array<Dialog> = [
     {
         id: 110,
         type: "basic",
-        content: "Je sais que ces concepts vous sont étrangés mais je ne suis pas là pour vous convaincre du bien fondé de notre Havre. J'ai urgemment besoin de vos connaissances pas de votre scepticisme.",
+        content: "Je sais que ces concepts vous sont étrangers mais je ne suis pas là pour vous convaincre du bien-fondé de notre Havre. J'ai urgemment besoin de vos connaissances, pas de votre scepticisme.",
         answers: [],
         dialogId: 120,
     },
     {
         id: 120,
         type: "narrator",
-        content: "Vous sentez qu'argumenter contre son mysticisme ne vous ménera nulle part",
+        content: "Vous sentez qu'argumenter contre son mysticisme ne vous mènera nulle part.",
         answers: [
             {
-                content: "Trouvons les plans d'Arkham",
+                content: "Trouvons les plans d'Arkham.",
                 dialogId: 130,
             }
         ],
@@ -161,7 +161,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 130,
         type: "basic",
-        content: "Merci mille fois. Je me suis procuré un portable qui me permet d'être en contact avec vous. J'ai réussi à me connecter au réseau privé de notre seigneur. Je pense que l'on peut y trouver des informations importantes. Mais je suis bloqué par un mot de passe. Pouvez-vous le trouver ?",
+        content: "Merci mille fois. Je me suis procuré un portable qui me permet d'être en contact avec vous. J'ai réussi à me connecter au réseau privé de notre Seigneur. Je pense que l'on peut y trouver des informations importantes. Mais je suis bloqué par un mot de passe. Pouvez-vous le trouver ?",
         answers: [
             {
                 content: "Ok, c'est parti !",
@@ -179,7 +179,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 150,
         type: "basic",
-        content: "Bien joué ! Maintenant, nous allons devoir tirer l'aiguille de la botte de foin. ",
+        content: "Bien joué ! Maintenant, nous allons devoir tirer l'aiguille de la botte de foin.",
         answers: [],
         dialogId: 160,
     },
@@ -193,7 +193,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 170,
         type: "basic",
-        content: "Il contient deux fichiers, je vous les fait parvenir.",
+        content: "Il contient deux fichiers, je vous les fais parvenir.",
         answers: [],
         dialogId: 180,
     },
@@ -301,7 +301,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 270,
         type: "basic",
-        content: "Il doit être caché dans le Havre. Peut-être qu'en jetant un oeil au plan que l'on a trouvé...",
+        content: "Il doit être caché dans le Havre. Peut-être qu'en jetant un œil au plan que l'on a trouvé...",
         answers: [],
         dialogId: 280,
     },
@@ -334,7 +334,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 301,
         type: "basic",
-        content: "Je suis dans la cuisine. Il ne faut pas que je reste trop longtemps. Seul les plus fervents y sont autorisés depuis plus d'un mois.",
+        content: "Je suis dans la cuisine. Il ne faut pas que je reste trop longtemps. Seuls les plus fervents y sont autorisés depuis plus d'un mois.",
         answers: [
             {
                 content: "Il y a une raison à ça ?",
@@ -353,7 +353,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 302,
         type: "basic",
-        content: "La nourriture doit rester pure, seul les êtres dont l'aura est lumineuse peuvent la manipuler.",
+        content: "La nourriture doit rester pure, seuls les êtres dont l'aura est lumineuse peuvent la manipuler.",
         answers: [
             {
                 content: "Très bien, dépêchons-nous, que voyez-vous ?",
@@ -377,7 +377,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 304,
         type: "basic",
-        content: "La note semble relier à cette serrure, à vous de jouer.",
+        content: "La note semble reliée à cette serrure, à vous de jouer.",
         answers: [
             {
                 content: "Ok, c'est parti.",
@@ -403,7 +403,7 @@ export const dialogs: Array<Dialog> = [
         id: 307,
         type: "image",
         turningPoint: true,
-        content: "De la prednisone, je connais ce médicament... Il a dû nous accoutumer lentement en empoisonnant nos repas... Un arrêt brutal et c'est le décés assuré.",
+        content: "De la prednisone, je connais ce médicament... Il a dû nous accoutumer lentement en empoisonnant nos repas... Un arrêt brutal et c'est le décès assuré.",
         media: "https://placehold.co/350x350",
         answers: [],
         dialogId: 308
@@ -412,7 +412,7 @@ export const dialogs: Array<Dialog> = [
         id: 308,
         type: "image",
         turningPoint: true,
-        content: "Une note est caché entre les boîtes de médicament. Encore plus cryptique que d'habitude.",
+        content: "Une note est cachée entre les boîtes de médicaments. Encore plus cryptique que d'habitude.",
         media: "https://placehold.co/350x350",
         answers: [
             {
@@ -457,7 +457,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 312,
         type: "basic",
-        content: "C'est le plus beau lieu du Havre. Il est magnifique, couvert de dorures et de peintures à la gloire de notre Seigneur Arkham. C'est ici qu'en sa présence nous pratiquons la méditation dynamique qui nous permettra de devenir des êtres de lumières, pour finalement faire notre ascension.",
+        content: "C'est le plus beau lieu du Havre. Il est magnifique, couvert de dorures et de peintures à la gloire de notre Seigneur Arkham. C'est ici qu'en sa présence nous pratiquons la méditation dynamique qui nous permettra de devenir des êtres de lumière, pour finalement faire notre ascension.",
         answers: [
             {
                 content: "Regardez autour de vous.",
@@ -477,7 +477,7 @@ export const dialogs: Array<Dialog> = [
         turningPoint: true,
         answers: [
             {
-                content: "Penchons nous sur ce piano.",
+                content: "Penchons-nous sur ce piano.",
                 dialogId: 314
             },
         ]
@@ -501,7 +501,7 @@ export const dialogs: Array<Dialog> = [
         type: "image",
         turningPoint: true,
         media: "https://placehold.co/350x350",
-        content: "Il y a un crâne dans le tiroir... et dans ce crâne... un papier à musique avec une écritures qui m'est inconnue.",
+        content: "Il y a un crâne dans le tiroir... et dans ce crâne... un papier à musique avec une écriture qui m'est inconnue.",
         answers: [
             {
                 content: "Ok, allons voir ailleurs.",
@@ -538,7 +538,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 323,
         type: "basic",
-        content: "C'est notre lieu de ressourcement. Elle est énorme, toute de verre et d'acier. On y trouve de magnifiques plantes équatoriales: des orchidées, des sensitives ou de la datura. De sublimes oiseaux aussi. Et surtout, l'air y est pur.",
+        content: "C'est notre lieu de ressourcement. Elle est énorme, toute de verre et d'acier. On y trouve de magnifiques plantes équatoriales : des orchidées, des sensitives ou du datura. De sublimes oiseaux aussi. Et surtout, l'air y est pur.",
         answers: [
             {
                 content: "Voyez-vous quelque-chose ?",
@@ -553,7 +553,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 324,
         type: "basic",
-        content: "Oui, je ne suis pas sûr de ce que j'avance mais il y a une imposante roche, et sur une des faces, il y a d'étranges signes gravés. Peut-être y jeterez-vous un oeil ?",
+        content: "Oui, je ne suis pas sûr de ce que j'avance mais il y a une imposante roche, et sur une des faces, il y a d'étranges signes gravés. Peut-être y jeterez-vous un œil ?",
         answers: [
             {
                 content: "Allons-y",
@@ -608,7 +608,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 329,
         type: "basic",
-        content: "La connexion est en train de s'interrompre, j'espère que ce message va quand même passer... il va falloir que vous inspectiez la page web pour trouver le mot de passe de reconnexion.",
+        content: "La connexion est en train de s'interrompre, j'espère que ce message va quand même passer... Il va falloir que vous inspectiez la page web pour trouver le mot de passe de reconnexion.",
         answers: [
             {
                 dialogId: 330,
@@ -643,7 +643,7 @@ export const dialogs: Array<Dialog> = [
     },
     {
         id: 360,
-        content: "Il y a un bureau qui trône au milieu de la pièce. Dans le fond, il y a une lourde porte blindée. à ma droite une porte en bois d'où semble s'échapper un courant d'air.",
+        content: "Il y a un bureau qui trône au milieu de la pièce. Dans le fond, il y a une lourde porte blindée. À ma droite une porte en bois d'où semble s'échapper un courant d'air.",
         type: "basic",
         dialogId: 370,
         answers: []
@@ -745,7 +745,7 @@ export const dialogs: Array<Dialog> = [
     },
     {
         id: 394,
-        content: "C'est Paul S... Il avait supposément atteint son ascension... Il est assis sur une chaise au centre de la pièce. Il n'est pas attaché mais il n'essaie pas de s'enfuir. C'est comme s'il était mort... Et vivant à la fois.. Ces yeux me suivent mais je n'y décèle aucune conscience.",
+        content: "C'est Paul S... Il avait supposément atteint son ascension... Il est assis sur une chaise au centre de la pièce. Il n'est pas attaché mais il n'essaie pas de s'enfuir. C'est comme s'il était mort... et vivant à la fois... Ces yeux me suivent mais je n'y décèle aucune conscience.",
         type: "basic",
         answers: [
             {
@@ -756,7 +756,7 @@ export const dialogs: Array<Dialog> = [
     },
     {
         id: 396,
-        content: "C'est ça oui. Il y a des fioles partout, des pétales de Datura et autres produits que je ne saurais reconnaître... Il tentait d'élaborer un mélange pour nous transformer en zombies à son service...",
+        content: "C'est ça, oui. Il y a des fioles partout, des pétales de Datura et autres produits que je ne saurais reconnaître... Il tentait d'élaborer un mélange pour nous transformer en zombies à son service...",
         type: "basic",
         answers: [
             {
@@ -814,7 +814,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 422,
         type: "basic",
-        content: "Ça y est je crois qu'on a tout. Il y a une dizaine de rapports semblable à celui qu'on a trouvé sur l'ordinateur. Tous statuent sur des décés, que des gens que j'appréciais...",
+        content: "Ça y est, je crois qu'on a tout. Il y a une dizaine de rapports semblables à celui qu'on a trouvé sur l'ordinateur. Tous statuent sur des décès, que des gens que j'appréciais...",
         answers: [],
         dialogId: 424
     },
@@ -833,7 +833,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 426,
         type: "audio",
-        media: "",
+        media: "static/audios/426.mp3",
         content: "...",
         answers: [
             {
@@ -863,10 +863,10 @@ export const dialogs: Array<Dialog> = [
     {
         id: 430,
         type: "basic",
-        content: "Je... j'ai ouvert la porte avec la petite clef et j'ai fui. Je suis dans un dédale de couloir souterrain, utilisez la carte et aidez-moi à m'y retrouver...",
+        content: "Je... j'ai ouvert la porte avec la petite clef et j'ai fui. Je suis dans un dédale de couloirs souterrains, aidez-moi à m'y retrouver avant qu'ils ne m'attrapent ici...",
         answers: [
             {
-                content: "Ok, c'est parti",
+                content: "Ok, c'est parti.",
                 dialogId: 432
             }
         ]

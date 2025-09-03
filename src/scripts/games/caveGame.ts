@@ -7,15 +7,19 @@ const gameSoundFXMapping = Object.freeze({
     jump: "static/audios/jump.ogg"
 });
 
-function audioFX(eventName: keyof typeof gameSoundFXMapping, loop?: boolean) {
+function audioFX(eventName: keyof typeof gameSoundFXMapping, loop?: boolean, vol?: number) {
     const audio = new Audio(gameSoundFXMapping[eventName])
     audio.loop = !!loop;
+
+    if (vol) {
+        audio.volume = vol;
+    }
 
     return audio;
 }
 
 const gameSoundFx = Object.freeze({
-    walk: audioFX("walk", true),
+    walk: audioFX("walk", true, 0.7),
     jump: audioFX("jump")
 });
 

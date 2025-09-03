@@ -8,10 +8,10 @@ const baseName = "chest-game"
 const main = document.getElementsByTagName("main")[0];
 
 const hintSentence = [
-    "Un arbre ne prend racine que s'il en a le coeur.",
+    "Un arbre ne prend racine que s'il en a le cœur.",
     "Alors, l'homme gonfle son plexus solaire",
-    "Et lui crie à pleine gorge:",
-    "\"Ouvre ton troisième oeil et ta couronne dominera le bois sacré\"."
+    "Et lui crie à pleine gorge :",
+    "\"Ouvre ton troisième œil et ta couronne dominera le bois sacré\"."
 ]
 
 const chakras = Object.freeze({

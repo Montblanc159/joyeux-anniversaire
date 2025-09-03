@@ -1,3 +1,5 @@
+[Password game, main theme and dialog + clue fx](https://soundimage.org/)
+
 https://github.com/fuhton/piano-mp3 => piano mp3 audios
 tiles => [Lanea Zimmerman](https://opengameart.org/content/dirt-platformer-tiles)
 character => [thekingphoenix/Bonsaiheldin](https://opengameart.org/content/pixel-character-with-gun)
@@ -10,3 +12,4 @@ character => [thekingphoenix/Bonsaiheldin](https://opengameart.org/content/pixel
 [Piano game]([https://opengameart.org/content/cursed-temple](https://opengameart.org/content/dark-ambiance))
 [Sesame game](https://opengameart.org/content/dark-ambiance)
 [Jump and walk in cave game](https://opengameart.org/content/sfx-the-ultimate-2017-16-bit-mini-pack)
+[Clue icons](https://game-icons.net/)

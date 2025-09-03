@@ -100,11 +100,11 @@ function createImageMessage(dialog: Dialog): DocumentFragment {
 function createAudioMessage(dialog: Dialog): DocumentFragment {
     const fragment = document.createDocumentFragment();
     const div = fragment.appendChild(document.createElement("div"))
-    const audio = div.appendChild(document.createElement("audio"));
     const p = div.appendChild(document.createElement("p"));
+    const audio = div.appendChild(document.createElement("audio"));
 
     audio.src = dialog.media || "";
-    audio.autoplay = false;
+    audio.autoplay = true;
     audio.controls = true;
     p.textContent = "VH: " + dialog.content;
     div.className = "chat__messages__him";
