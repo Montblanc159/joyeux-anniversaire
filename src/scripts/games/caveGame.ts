@@ -1,5 +1,5 @@
 import { type GameEvent } from "../games.js";
-import { audioReaction, playGameMusic } from "../audioSystem.js";
+import { audioReaction, pauseGameMusic, playGameMusic } from "../audioSystem.js";
 import "phaser";
 
 const gameSoundFXMapping = Object.freeze({
@@ -261,7 +261,7 @@ function gameWon() {
     winText.textContent = "LIBERTÉ";
 
     setTimeout(() => {
-        playGameMusic("endGame");
+        pauseGameMusic();
         fragment.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
     }, 3000)
 }

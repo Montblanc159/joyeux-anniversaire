@@ -10,6 +10,7 @@ $black: black;
 $white: white;
 $main-color: #e09431;
 $main-color-dark: #291a06;
+$main-color-darker: #130b01;
 $main-color-light: #e4b188;
 $secondary-color: #e69d15;
 $default-font: "VT323", monospace;
@@ -94,8 +95,10 @@ $width: 720px;
             color: $secondary-color;
         }
 
-        video {
-            max-width: 100%;
+        video,
+        img {
+            max-width: 75%;
+            border-radius: 7px;
         }
 
         &__narrator {
@@ -245,6 +248,7 @@ $width: 720px;
 }
 
 .password-game {
+
     position: fixed;
     top: 0;
     bottom: 0;
@@ -257,10 +261,13 @@ $width: 720px;
     align-items: center;
 
     &__image {
-        max-width: 150px;
+        width: 150px;
+        height: 150px;
         border-radius: 25px;
         border: $main-color-light 5px solid;
         margin: 10px;
+        object-fit: cover;
+        object-position: left;
     }
 
     &__form {
@@ -287,7 +294,7 @@ $width: 720px;
             border-left: $main-color-dark 1px solid;
 
             &:hover {
-                background-color: $main-color-dark;
+                background-color: $main-color-darker;
             }
 
             &:active {

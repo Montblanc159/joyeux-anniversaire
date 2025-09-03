@@ -47,7 +47,7 @@ function initGame(eventElement: DocumentFragment) {
 
 
         image.className = "password-game__image";
-        image.src = "https://placehold.co/150x150";
+        image.src = "static/images/avatar.gif";
 
         details.className = "password-game__details";
         details.title = "1993 : David y siègea.";

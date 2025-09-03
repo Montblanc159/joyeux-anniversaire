@@ -201,7 +201,7 @@ export const dialogs: Array<Dialog> = [
         id: 180,
         type: "image",
         content: "Serait-ce une énigme ?",
-        media: "https://placehold.co/350x350",
+        media: "static/images/180.jpg",
         turningPoint: true,
         answers: [],
         dialogId: 190,
@@ -211,7 +211,7 @@ export const dialogs: Array<Dialog> = [
         type: "image",
         content: "Un plan.",
         turningPoint: true,
-        media: "https://placehold.co/350x350",
+        media: "static/images/190.jpg",
         answers: [],
         dialogId: 195,
     },
@@ -787,9 +787,8 @@ export const dialogs: Array<Dialog> = [
     },
     {
         id: 400,
-        type: "image",
+        type: "basic",
         content: "Ok j'y suis. Il n'y a rien de notable sur le bureau mais un de ses tiroirs qui est fermé. Il y a des boutons avec d'étranges symboles dessus.",
-        media: "https://placehold.co/350x350",
         answers: [
             {
                 content: "Ok, jetons-y un oeil.",

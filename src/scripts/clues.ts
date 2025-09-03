@@ -13,7 +13,7 @@ export const clues: Array<Clue> = [
         type: "image",
         icon: "static/images/treasure-map.svg",
         content: [],
-        media: "https://placehold.co/350x350",
+        media: "static/images/190.jpg",
         dialogId: 190
     },
     {
@@ -44,6 +44,7 @@ export const clues: Array<Clue> = [
         icon: "static/images/envelope.svg",
         type: "text",
         content: [
+            "🌙",
             "Est-il aussi clair dans un miroir ?"
         ]
     },
@@ -52,7 +53,10 @@ export const clues: Array<Clue> = [
         icon: "static/images/tied-scroll.svg",
         dialogId: 308,
         type: "text",
-        content: []
+        content: [
+            "🐬",
+            "P20L10M5",
+        ]
     },
     {
         title: "Papier à musique : Ut queant laxis",

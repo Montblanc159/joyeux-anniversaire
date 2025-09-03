@@ -72,7 +72,7 @@ function createVideoMessage(dialog: Dialog): DocumentFragment {
     const p = div.appendChild(document.createElement("p"));
 
     video.src = dialog.media || "";
-    video.autoplay = false;
+    video.autoplay = true;
     video.controls = true;
     p.textContent = "VH: " + dialog.content;
     div.className = "chat__messages__him";

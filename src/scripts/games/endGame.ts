@@ -1,8 +1,6 @@
-import { type GameEvent } from "../games.js";
-import { audioReaction, playGameMusic } from "../audioSystem.js";
+import { playGameMusic } from "../audioSystem.js";
 import { getCookie, resetCookie } from "../cookies.js";
 
-// const gameEvent: GameEvent = { nextMessageId: 220 };
 const baseName = "end-game"
 const main = document.getElementsByTagName("main")[0];
 const userPath: Array<integer> = JSON.parse(getCookie("dialogsPath"));

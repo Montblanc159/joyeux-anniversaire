@@ -80,7 +80,7 @@ function initGame(eventElement: DocumentFragment) {
 
         file.className = baseName + "__file"
         fileDescription.className = baseName + "__file__description"
-        fileDescription.textContent = "/home/arkham/privé/201811082034-rapport.txt"
+        fileDescription.textContent = "/home/arkham/protocole/201811082034-rapport.txt"
 
         let cypher: Array<HTMLParagraphElement> = [];
 
