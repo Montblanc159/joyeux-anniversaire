@@ -55,7 +55,17 @@ export const clues: Array<Clue> = [
         type: "text",
         content: [
             "🐬",
-            "P20L10M5",
+            "P56L3M9",
+            "P263L6M9",
+            "P288L8M1",
+            "P195L5M7",
+            "P129L8M9",
+            "P132L15M1",
+            "P260L1M2",
+            "P168L9M6",
+            "P127L1M6",
+            "P193L9M5",
+            "P88L18M2"
         ]
     },
     {

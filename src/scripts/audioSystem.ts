@@ -5,7 +5,8 @@ const uiSoundFX = Object.freeze({
     success: "static/audios/success.mp3",
     open: "static/audios/open.mp3",
     close: "static/audios/close.mp3",
-    booting: "static/audios/booting.mp3"
+    booting: "static/audios/booting.mp3",
+    click: "static/audios/click.mp3"
 });
 
 const bgMusics = Object.freeze(
@@ -39,6 +40,8 @@ export function playGameMusic(src?: keyof typeof bgMusics, volume?: number) {
 
     if (volume) {
         bgAudio.volume = volume;
+    } else {
+        bgAudio.volume = 0.7;
     }
 
     bgAudio.play();

@@ -370,7 +370,7 @@ export const dialogs: Array<Dialog> = [
         type: "image",
         content: "J'y ai trouvé un petit frigo avec une étrange serrure. Il y a une note sur le frigo.",
         turningPoint: true,
-        media: "https://placehold.co/350x350",
+        media: "static/images/303.jpg",
         answers: [],
         dialogId: 304,
     },
@@ -404,7 +404,7 @@ export const dialogs: Array<Dialog> = [
         type: "image",
         turningPoint: true,
         content: "De la prednisone, je connais ce médicament... Il a dû nous accoutumer lentement en empoisonnant nos repas... Un arrêt brutal et c'est le décès assuré.",
-        media: "https://placehold.co/350x350",
+        media: "static/images/307.jpg",
         answers: [],
         dialogId: 308
     },
@@ -413,7 +413,7 @@ export const dialogs: Array<Dialog> = [
         type: "image",
         turningPoint: true,
         content: "Une note est cachée entre les boîtes de médicaments. Encore plus cryptique que d'habitude.",
-        media: "https://placehold.co/350x350",
+        media: "static/images/308.jpg",
         answers: [
             {
                 content: "Ok, partons de là.",
@@ -473,7 +473,7 @@ export const dialogs: Array<Dialog> = [
         id: 313,
         type: "image",
         content: "À droite il y a un piano, sur son pupitre, à la place d'une partition, un étrange mot. Qu'en pensez-vous ?",
-        media: "https://placehold.co/350x350",
+        media: "static/images/313.jpg",
         turningPoint: true,
         answers: [
             {
@@ -500,7 +500,7 @@ export const dialogs: Array<Dialog> = [
         id: 316,
         type: "image",
         turningPoint: true,
-        media: "https://placehold.co/350x350",
+        media: "static/images/316.jpg",
         content: "Il y a un crâne dans le tiroir... et dans ce crâne... un papier à musique avec une écriture qui m'est inconnue.",
         answers: [
             {

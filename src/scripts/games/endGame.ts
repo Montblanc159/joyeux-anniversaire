@@ -50,6 +50,8 @@ function initGame(fragment: DocumentFragment) {
     setTimeout(() => {
         loading.remove();
 
+        // ADD STUFF HERE
+
         const title = section.appendChild(document.createElement("h1"));
 
         title.textContent = "Horreur à Arkham";
@@ -73,10 +75,16 @@ function initGame(fragment: DocumentFragment) {
         // This arrangement can be altered based on how we want the date's format to appear.
         let currentDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 
-
         p.textContent = "Extrait du Arkham Herald - " + currentDate;
         p.className = baseName + "__text"
 
+        const readBtn = section.appendChild(document.createElement("button"));
+        readBtn.className = baseName + "__reset";
+        readBtn.textContent = "LIRE L'ARTICLE";
+
+        readBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
 
         // const btn = section.appendChild(document.createElement("button"));
         // btn.className = baseName + "__reset";

@@ -209,7 +209,7 @@ export function caveGameLauncher(): DocumentFragment {
     const div = fragment.appendChild(document.createElement("div"))
     const p = div.appendChild(document.createElement("p"));
 
-    audioReaction("booting");
+    // audioReaction("booting");
 
     p.textContent = "Ouverture de la carte...";
     div.className = "chat__messages__game";
@@ -261,7 +261,6 @@ function gameWon() {
     winText.textContent = "LIBERTÉ";
 
     setTimeout(() => {
-        pauseGameMusic();
         fragment.dispatchEvent(new CustomEvent("won", { detail: winGameEvent }));
     }, 3000)
 }

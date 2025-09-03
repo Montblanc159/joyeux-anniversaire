@@ -81,6 +81,8 @@ function initGame(eventElement: DocumentFragment) {
             // imgButton.alt = "Un étrange symbole";
 
             imgButton.addEventListener("click", () => {
+                audioReaction("click");
+
                 if (userInput.length >= key.length) { userInput.shift() };
 
                 userInput.push(chakraName);
