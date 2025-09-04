@@ -1,6 +1,7 @@
 import { getCookie } from "./cookies.js";
 import { clues, type Clue } from "./clues.js";
 import { audioReaction } from "./audioSystem.js";
+import { showImage } from "./imageViewer.js";
 
 const clueContructors: { [index: string]: (clue: Clue) => DocumentFragment } = {
     text: createTextClue,
@@ -132,6 +133,10 @@ function createImageClue(clue: Clue): DocumentFragment {
 
         media.src = clue?.media || "";
         media.className = baseName + "__window__image";
+
+        media.addEventListener("click", () => {
+            showImage(media.src);
+        })
     }
 
     return fragment;

@@ -2,6 +2,7 @@ import { dialogs, type Dialog, type Answer } from './dialogs.js';
 import { games, GameEvent } from "./games.js";
 import { getCookie, setCookie } from "./cookies.js";
 import { audioReaction, playGameMusic } from './audioSystem.js';
+import { showImage } from './imageViewer.js';
 
 const chatBox = document.getElementsByClassName("chat__messages")[0];
 const anchor = document.getElementsByClassName("chat__messages__anchor")[0];
@@ -89,6 +90,11 @@ function createImageMessage(dialog: Dialog): DocumentFragment {
     const p = div.appendChild(document.createElement("p"));
 
     image.src = dialog.media || "";
+
+    image.addEventListener("click", () => {
+        showImage(image.src);
+    })
+
     p.textContent = "VH: " + dialog.content;
     div.className = "chat__messages__him";
 

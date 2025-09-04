@@ -29,6 +29,10 @@ export function checkCookie(): void {
     if (getCookie("lastDialog") === "") {
         setCookie("lastDialog", JSON.stringify(0), 30);
     }
+
+    if (getCookie("completed") === "") {
+        setCookie("completed", JSON.stringify(false), 30);
+    }
 }
 
 export function resetCookie(): void {

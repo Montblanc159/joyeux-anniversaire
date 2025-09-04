@@ -880,7 +880,7 @@ export const dialogs: Array<Dialog> = [
     {
         id: 433,
         type: "video",
-        media: "out.mp4",
+        media: "static/videos/433.webm",
         content: "",
         answers: [
             {

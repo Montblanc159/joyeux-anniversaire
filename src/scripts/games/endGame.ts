@@ -1,5 +1,5 @@
 import { playGameMusic } from "../audioSystem.js";
-import { getCookie, resetCookie } from "../cookies.js";
+import { getCookie, setCookie } from "../cookies.js";
 
 const baseName = "end-game"
 const main = document.getElementsByTagName("main")[0];
@@ -78,13 +78,18 @@ function initGame(fragment: DocumentFragment) {
         p.textContent = "Extrait du Arkham Herald - " + currentDate;
         p.className = baseName + "__text"
 
-        const readBtn = section.appendChild(document.createElement("button"));
-        readBtn.className = baseName + "__reset";
-        readBtn.textContent = "LIRE L'ARTICLE";
+        if (!JSON.parse(getCookie("completed"))) {
+            setCookie("completed", JSON.stringify(true), 30);
 
-        readBtn.addEventListener("click", () => {
-            window.location.reload();
-        });
+            const readBtn = section.appendChild(document.createElement("button"));
+
+            readBtn.className = baseName + "__reset";
+            readBtn.textContent = "LIRE L'ARTICLE";
+
+            readBtn.addEventListener("click", () => {
+                window.location.reload();
+            });
+        }
 
         // const btn = section.appendChild(document.createElement("button"));
         // btn.className = baseName + "__reset";

@@ -91,9 +91,6 @@ class CaveGame extends Phaser.Scene {
 
             const winZone = this.levelMap?.findObject("markers", (obj) => { return obj.name === "winZone"; });
 
-            console.log(winZone);
-
-
             if (winZone) {
                 const winOverlap = this.add.zone(
                     winZone.x!,

@@ -81,7 +81,7 @@ function initGame(eventElement: DocumentFragment) {
         main.appendChild(fragment);
 
         inputs.forEach((input) => {
-            input.addEventListener("change", () => {
+            input.addEventListener("input", () => {
                 let userInput = inputs.map((input) => input.value).join("");
 
                 if (userInput === key) {
